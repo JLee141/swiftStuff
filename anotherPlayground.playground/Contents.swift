@@ -2,6 +2,7 @@ import UIKit
 
 let label = "The Width of this is "
 let width = 14
+let aString = "This is a random string"
 
 let labelWidth = label + String(width)
 print(labelWidth)
