@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var helloLabel: UILabel!
+    var greeting = "Hello"
+    @IBOutlet weak var easterEggLabel: UILabel!
+    var response = "You just activated my trap card, you pressed reset even though you didn't need too. I will now banish you to the shadow realm!"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +28,11 @@ class ViewController: UIViewController {
     @IBAction func resetButton(_ sender: Any) {
         if(helloLabel.text == "World ;)"){
             helloLabel.text = "Hello"
+            easterEggLabel.text = ""
+        }else if(helloLabel.text==greeting || helloLabel.text==greeting.lowercased()){
+            easterEggLabel.text = response
         }
     }
     
-
-
 }
 
