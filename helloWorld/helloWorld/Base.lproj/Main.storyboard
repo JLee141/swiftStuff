@@ -18,34 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-op-Fdb" userLabel="buttonStack">
-                                <rect key="frame" x="171.5" y="489.5" width="71" height="136"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sob-lN-Zee" userLabel="pressMe">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Press Me"/>
-                                        <connections>
-                                            <action selector="pressMeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HbN-mj-bgI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYi-fH-CRF" userLabel="reset">
-                                        <rect key="frame" x="0.0" y="53" width="71" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Reset"/>
-                                        <connections>
-                                            <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOB-Nk-AIp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UT-Bg-MM1" userLabel="pictureButton">
-                                        <rect key="frame" x="0.0" y="106" width="71" height="30"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                        <state key="normal" title="Picture"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkr-XV-dTN" userLabel="easterEgg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkr-XV-dTN" userLabel="easterEgg">
                                 <rect key="frame" x="46" y="142" width="322" height="156"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,6 +30,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sob-lN-Zee" userLabel="pressMe">
+                                <rect key="frame" x="171.5" y="484.5" width="71" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Press Me"/>
+                                <connections>
+                                    <action selector="pressMeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HbN-mj-bgI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYi-fH-CRF" userLabel="reset">
+                                <rect key="frame" x="185" y="537.5" width="44" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOB-Nk-AIp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -64,9 +53,13 @@
                             <constraint firstItem="Mkr-XV-dTN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="98" id="Cs4-H7-BvE"/>
                             <constraint firstItem="6Hx-8U-OXB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FBF-4R-LWy"/>
                             <constraint firstItem="6Hx-8U-OXB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GFB-jJ-FRM"/>
+                            <constraint firstItem="MYi-fH-CRF" firstAttribute="top" secondItem="sob-lN-Zee" secondAttribute="bottom" constant="20" id="Mlv-pR-hM1"/>
                             <constraint firstItem="Mkr-XV-dTN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YpN-mI-WfS"/>
                             <constraint firstItem="6Hx-8U-OXB" firstAttribute="top" secondItem="Mkr-XV-dTN" secondAttribute="bottom" constant="128.5" id="aIK-eB-7aF"/>
+                            <constraint firstItem="MYi-fH-CRF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cxP-UU-ljN"/>
+                            <constraint firstItem="sob-lN-Zee" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lKh-te-vMO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mkr-XV-dTN" secondAttribute="trailing" constant="46" id="xID-TM-zKY"/>
+                            <constraint firstItem="sob-lN-Zee" firstAttribute="top" secondItem="6Hx-8U-OXB" secondAttribute="bottom" constant="15" id="zQx-Ax-49y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -77,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="130.43478260869566" y="137.27678571428569"/>
         </scene>
     </scenes>
 </document>
