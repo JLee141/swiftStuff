@@ -46,6 +46,13 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOB-Nk-AIp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l98-eS-hHG" userLabel="randomButton">
+                                <rect key="frame" x="154" y="693" width="109" height="30"/>
+                                <state key="normal" title="Random Button"/>
+                                <connections>
+                                    <action selector="randomButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xYr-N1-dCm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -57,8 +64,11 @@
                             <constraint firstItem="Mkr-XV-dTN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YpN-mI-WfS"/>
                             <constraint firstItem="6Hx-8U-OXB" firstAttribute="top" secondItem="Mkr-XV-dTN" secondAttribute="bottom" constant="128.5" id="aIK-eB-7aF"/>
                             <constraint firstItem="MYi-fH-CRF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cxP-UU-ljN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l98-eS-hHG" secondAttribute="trailing" constant="155" id="eM9-yJ-sWT"/>
+                            <constraint firstItem="l98-eS-hHG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="154" id="gRZ-DH-t0F"/>
                             <constraint firstItem="sob-lN-Zee" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lKh-te-vMO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mkr-XV-dTN" secondAttribute="trailing" constant="46" id="xID-TM-zKY"/>
+                            <constraint firstItem="l98-eS-hHG" firstAttribute="top" secondItem="MYi-fH-CRF" secondAttribute="bottom" constant="122.5" id="xyo-ZE-Ssf"/>
                             <constraint firstItem="sob-lN-Zee" firstAttribute="top" secondItem="6Hx-8U-OXB" secondAttribute="bottom" constant="15" id="zQx-Ax-49y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -66,6 +76,7 @@
                     <connections>
                         <outlet property="easterEggLabel" destination="Mkr-XV-dTN" id="o0s-Ex-HC2"/>
                         <outlet property="helloLabel" destination="6Hx-8U-OXB" id="Iw2-to-ubZ"/>
+                        <outlet property="randomButton" destination="l98-eS-hHG" id="LPQ-ip-fTn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

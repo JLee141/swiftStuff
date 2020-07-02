@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "helloWorld/ViewController.swift"
+            timestampString = "576272241.854339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "helloWorld.ViewController.response.getter : Swift.String"
+                  moduleName = "helloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JLee/Documents/codePlayground/swiftStuff/helloWorld/helloWorld/ViewController.swift"
+                  timestampString = "576084732.177362"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "127">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "helloWorld.ViewController.response.setter : Swift.String"
+                  moduleName = "helloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JLee/Documents/codePlayground/swiftStuff/helloWorld/helloWorld/ViewController.swift"
+                  timestampString = "576084732.180011"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "helloWorld.ViewController.response.modify : Swift.String"
+                  moduleName = "helloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JLee/Documents/codePlayground/swiftStuff/helloWorld/helloWorld/ViewController.swift"
+                  timestampString = "576084732.182532"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "helloWorld.ViewController.response.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "helloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JLee/Documents/codePlayground/swiftStuff/helloWorld/helloWorld/ViewController.swift"
+                  timestampString = "576084732.185329"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "helloWorld.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; helloWorld.ViewController"
+                  moduleName = "helloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JLee/Documents/codePlayground/swiftStuff/helloWorld/helloWorld/ViewController.swift"
+                  timestampString = "576084732.1879801"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "574">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "helloWorld.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;helloWorld.ViewController&gt;"
+                  moduleName = "helloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JLee/Documents/codePlayground/swiftStuff/helloWorld/helloWorld/ViewController.swift"
+                  timestampString = "576084732.190338"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "494">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

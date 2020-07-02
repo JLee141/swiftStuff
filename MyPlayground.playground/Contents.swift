@@ -22,20 +22,18 @@ let width = 100
 
 let widthLabel = label + String(width)
 
-var myDictionary = [Int:String]()
-
+var testScoreDictionary = [Int:String]()
 
 let testScores = [60,70,89,90,45]
 
 let amountOfScores = testScores.count
-
-/*
-for amountOfScores in testScores{
+print(amountOfScores)
+for score in amountOfScores{
     if testScores < 60 {
         print("Testscore" + String[testScores])
     }
 }
-*/
+
 let thisIsMyString = "This is a string of text that I am putting into my function"
 
 var num: Int = 2
@@ -70,3 +68,4 @@ default:
 
 print("This is another println statement")
 print("I'm learning to create functions in swift")
+print()

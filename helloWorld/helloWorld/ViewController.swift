@@ -15,9 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var easterEggLabel: UILabel!
     let easterEggResponse = "You just activated my trap card, you pressed reset even though you didn't need too. I will now banish you to the shadow realm!"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func pressMeButton(_ sender: Any) {
@@ -33,5 +35,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var randomButton: UIButton!
+    
+    @IBAction func randomButtonPress(_ sender: Any) {
+        
+        randomButton.titleLabel?.text = "The button title changed"
+        
+    }
 }
 
