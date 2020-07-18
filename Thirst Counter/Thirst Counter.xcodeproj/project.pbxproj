@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */; };
+		7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFAE24B8E45900481EDC /* AppDelegate.swift */; };
+		7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB024B8E45900481EDC /* SceneDelegate.swift */; };
+		7A73BFB324B8E45900481EDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB224B8E45900481EDC /* ContentView.swift */; };
+		7A73BFB524B8E45A00481EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB424B8E45A00481EDC /* Assets.xcassets */; };
+		7A73BFB824B8E45A00481EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB724B8E45A00481EDC /* Preview Assets.xcassets */; };
+		7A73BFBB24B8E45A00481EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB924B8E45A00481EDC /* LaunchScreen.storyboard */; };
+		7A73BFC624B8E45A00481EDC /* Thirst_CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFC524B8E45A00481EDC /* Thirst_CounterTests.swift */; };
+		7A73BFD124B8E45A00481EDC /* Thirst_CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFD024B8E45A00481EDC /* Thirst_CounterUITests.swift */; };
+		7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFDE24B9A58E00481EDC /* dataFile.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A73BFC224B8E45A00481EDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A73BFA324B8E45900481EDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A73BFAA24B8E45900481EDC;
+			remoteInfo = "Thirst Counter";
+		};
+		7A73BFCD24B8E45A00481EDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A73BFA324B8E45900481EDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A73BFAA24B8E45900481EDC;
+			remoteInfo = "Thirst Counter";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidIntake.swift; sourceTree = "<group>"; };
+		7A73BFAB24B8E45900481EDC /* Thirst Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thirst Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A73BFAE24B8E45900481EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A73BFB024B8E45900481EDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7A73BFB224B8E45900481EDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A73BFB424B8E45A00481EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A73BFB724B8E45A00481EDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7A73BFBA24B8E45A00481EDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A73BFBC24B8E45A00481EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A73BFC124B8E45A00481EDC /* Thirst CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thirst CounterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A73BFC524B8E45A00481EDC /* Thirst_CounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirst_CounterTests.swift; sourceTree = "<group>"; };
+		7A73BFC724B8E45A00481EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A73BFCC24B8E45A00481EDC /* Thirst CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thirst CounterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A73BFD024B8E45A00481EDC /* Thirst_CounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirst_CounterUITests.swift; sourceTree = "<group>"; };
+		7A73BFD224B8E45A00481EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A73BFDE24B9A58E00481EDC /* dataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataFile.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A73BFA824B8E45900481EDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A73BFBE24B8E45A00481EDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A73BFC924B8E45A00481EDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A73BFA224B8E45900481EDC = {
+			isa = PBXGroup;
+			children = (
+				7A73BFAD24B8E45900481EDC /* Thirst Counter */,
+				7A73BFC424B8E45A00481EDC /* Thirst CounterTests */,
+				7A73BFCF24B8E45A00481EDC /* Thirst CounterUITests */,
+				7A73BFAC24B8E45900481EDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A73BFAC24B8E45900481EDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A73BFAB24B8E45900481EDC /* Thirst Counter.app */,
+				7A73BFC124B8E45A00481EDC /* Thirst CounterTests.xctest */,
+				7A73BFCC24B8E45A00481EDC /* Thirst CounterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A73BFAD24B8E45900481EDC /* Thirst Counter */ = {
+			isa = PBXGroup;
+			children = (
+				7A73BFAE24B8E45900481EDC /* AppDelegate.swift */,
+				7A73BFB024B8E45900481EDC /* SceneDelegate.swift */,
+				7A73BFB224B8E45900481EDC /* ContentView.swift */,
+				7A73BFDE24B9A58E00481EDC /* dataFile.swift */,
+				7A73BFB424B8E45A00481EDC /* Assets.xcassets */,
+				7A73BFB924B8E45A00481EDC /* LaunchScreen.storyboard */,
+				7A73BFBC24B8E45A00481EDC /* Info.plist */,
+				7A73BFB624B8E45A00481EDC /* Preview Content */,
+				7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */,
+			);
+			path = "Thirst Counter";
+			sourceTree = "<group>";
+		};
+		7A73BFB624B8E45A00481EDC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7A73BFB724B8E45A00481EDC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7A73BFC424B8E45A00481EDC /* Thirst CounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A73BFC524B8E45A00481EDC /* Thirst_CounterTests.swift */,
+				7A73BFC724B8E45A00481EDC /* Info.plist */,
+			);
+			path = "Thirst CounterTests";
+			sourceTree = "<group>";
+		};
+		7A73BFCF24B8E45A00481EDC /* Thirst CounterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7A73BFD024B8E45A00481EDC /* Thirst_CounterUITests.swift */,
+				7A73BFD224B8E45A00481EDC /* Info.plist */,
+			);
+			path = "Thirst CounterUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A73BFAA24B8E45900481EDC /* Thirst Counter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A73BFD524B8E45A00481EDC /* Build configuration list for PBXNativeTarget "Thirst Counter" */;
+			buildPhases = (
+				7A73BFA724B8E45900481EDC /* Sources */,
+				7A73BFA824B8E45900481EDC /* Frameworks */,
+				7A73BFA924B8E45900481EDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Thirst Counter";
+			productName = "Thirst Counter";
+			productReference = 7A73BFAB24B8E45900481EDC /* Thirst Counter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A73BFC024B8E45A00481EDC /* Thirst CounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A73BFD824B8E45A00481EDC /* Build configuration list for PBXNativeTarget "Thirst CounterTests" */;
+			buildPhases = (
+				7A73BFBD24B8E45A00481EDC /* Sources */,
+				7A73BFBE24B8E45A00481EDC /* Frameworks */,
+				7A73BFBF24B8E45A00481EDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A73BFC324B8E45A00481EDC /* PBXTargetDependency */,
+			);
+			name = "Thirst CounterTests";
+			productName = "Thirst CounterTests";
+			productReference = 7A73BFC124B8E45A00481EDC /* Thirst CounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7A73BFCB24B8E45A00481EDC /* Thirst CounterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A73BFDB24B8E45A00481EDC /* Build configuration list for PBXNativeTarget "Thirst CounterUITests" */;
+			buildPhases = (
+				7A73BFC824B8E45A00481EDC /* Sources */,
+				7A73BFC924B8E45A00481EDC /* Frameworks */,
+				7A73BFCA24B8E45A00481EDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A73BFCE24B8E45A00481EDC /* PBXTargetDependency */,
+			);
+			name = "Thirst CounterUITests";
+			productName = "Thirst CounterUITests";
+			productReference = 7A73BFCC24B8E45A00481EDC /* Thirst CounterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A73BFA324B8E45900481EDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Jordan Lee";
+				TargetAttributes = {
+					7A73BFAA24B8E45900481EDC = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					7A73BFC024B8E45A00481EDC = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7A73BFAA24B8E45900481EDC;
+					};
+					7A73BFCB24B8E45A00481EDC = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7A73BFAA24B8E45900481EDC;
+					};
+				};
+			};
+			buildConfigurationList = 7A73BFA624B8E45900481EDC /* Build configuration list for PBXProject "Thirst Counter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A73BFA224B8E45900481EDC;
+			productRefGroup = 7A73BFAC24B8E45900481EDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A73BFAA24B8E45900481EDC /* Thirst Counter */,
+				7A73BFC024B8E45A00481EDC /* Thirst CounterTests */,
+				7A73BFCB24B8E45A00481EDC /* Thirst CounterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A73BFA924B8E45900481EDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A73BFBB24B8E45A00481EDC /* LaunchScreen.storyboard in Resources */,
+				7A73BFB824B8E45A00481EDC /* Preview Assets.xcassets in Resources */,
+				7A73BFB524B8E45A00481EDC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A73BFBF24B8E45A00481EDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A73BFCA24B8E45A00481EDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A73BFA724B8E45900481EDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */,
+				7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */,
+				7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */,
+				7A73BFB324B8E45900481EDC /* ContentView.swift in Sources */,
+				7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A73BFBD24B8E45A00481EDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A73BFC624B8E45A00481EDC /* Thirst_CounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A73BFC824B8E45A00481EDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A73BFD124B8E45A00481EDC /* Thirst_CounterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A73BFC324B8E45A00481EDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A73BFAA24B8E45900481EDC /* Thirst Counter */;
+			targetProxy = 7A73BFC224B8E45A00481EDC /* PBXContainerItemProxy */;
+		};
+		7A73BFCE24B8E45A00481EDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A73BFAA24B8E45900481EDC /* Thirst Counter */;
+			targetProxy = 7A73BFCD24B8E45A00481EDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7A73BFB924B8E45A00481EDC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A73BFBA24B8E45A00481EDC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A73BFD324B8E45A00481EDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7A73BFD424B8E45A00481EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A73BFD624B8E45A00481EDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Thirst Counter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Thirst Counter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-Counter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7A73BFD724B8E45A00481EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Thirst Counter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Thirst Counter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-Counter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7A73BFD924B8E45A00481EDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Thirst CounterTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-CounterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thirst Counter.app/Thirst Counter";
+			};
+			name = Debug;
+		};
+		7A73BFDA24B8E45A00481EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Thirst CounterTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-CounterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thirst Counter.app/Thirst Counter";
+			};
+			name = Release;
+		};
+		7A73BFDC24B8E45A00481EDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Thirst CounterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-CounterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Thirst Counter";
+			};
+			name = Debug;
+		};
+		7A73BFDD24B8E45A00481EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Thirst CounterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-CounterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Thirst Counter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A73BFA624B8E45900481EDC /* Build configuration list for PBXProject "Thirst Counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A73BFD324B8E45A00481EDC /* Debug */,
+				7A73BFD424B8E45A00481EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A73BFD524B8E45A00481EDC /* Build configuration list for PBXNativeTarget "Thirst Counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A73BFD624B8E45A00481EDC /* Debug */,
+				7A73BFD724B8E45A00481EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A73BFD824B8E45A00481EDC /* Build configuration list for PBXNativeTarget "Thirst CounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A73BFD924B8E45A00481EDC /* Debug */,
+				7A73BFDA24B8E45A00481EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A73BFDB24B8E45A00481EDC /* Build configuration list for PBXNativeTarget "Thirst CounterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A73BFDC24B8E45A00481EDC /* Debug */,
+				7A73BFDD24B8E45A00481EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A73BFA324B8E45900481EDC /* Project object */;
+}

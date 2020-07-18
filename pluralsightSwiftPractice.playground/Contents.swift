@@ -13,7 +13,7 @@ let anotherPlayerName: String
 
 func simpleFunction() -> String{
     //Make a new vairable
-    var aString = "This is a string variable"
+    let aString = "This is a string variable"
     return aString
 }
 
@@ -47,3 +47,143 @@ func printIfTrue(_ aSwitch:Bool){
 printIfTrue(myKey)
 myKey = false
 printIfTrue(myKey)
+
+//function statements
+var coffeeCup = true
+
+func refillCoffee(){
+    if coffeeCup == true{
+        print("Coffee cup is already full!")
+    }
+    else{
+        coffeeCup = true
+        print("*Pours Coffee*")
+    }
+}
+
+func drinkCoffee(){
+    if coffeeCup == false{
+        print("You need more coffee!")
+    }
+    else{
+        coffeeCup = false
+        print("*Sluuurrrrrp*")
+    }
+}
+
+func coffeeStatus()->String {
+    if coffeeCup == true{
+        return "Coffee is full!"
+    }
+    else{
+        return "Coffee is empty! Time to fill up :)"
+    }
+}
+refillCoffee()
+drinkCoffee()
+print(coffeeStatus())
+
+var fName: String = "Jordan"
+var lName = "Lee"
+
+print("My full name is \(fName) \(lName) and I love technology!")
+
+//Defining a class
+
+class Emoji {
+    //properties
+    var icon: String
+    var name: String
+    var description: String
+    
+    func getDescription() -> String {
+        return "\(description)"
+    }
+    func getIcon() -> String {
+        return "\(icon)"
+    }
+    init() {
+        self.icon = ""
+        self.name = ""
+        self.description = ""
+    }
+}
+
+var happyEmoji = Emoji()
+happyEmoji.icon = "😀"
+happyEmoji.description = "This emoji is happy!"
+happyEmoji.getDescription()
+happyEmoji.name = "Happy"
+happyEmoji.getIcon()
+
+struct Appliance {
+    //properties
+    var manufacture: String
+    //I don't have to set an initilizer...
+}
+
+var microwave = Appliance(manufacture: "Dyson")
+
+//value(Structs) vs. reference(Class)
+
+
+//strings
+let album = "Decks and drums and rock and roll"
+let scriptio = "Neque porro quiquam est qui dolorem ipsum quia dolor sit amet"
+let phrase = "Love is now here"
+
+//You can create an extension of the class string which will allow you to add functions to that class like in this example removeSpaces
+extension String {
+    func removeSpaces() -> String {
+        let filteredCharacters = self.filter { $0 != " "}
+        return String(filteredCharacters)
+    }
+}
+scriptio.removeSpaces()
+
+//Adding computed Properties
+class Player {
+    var name: String
+    var livesRemaining: Int
+    var enemiesDestroyed: Int
+    var penalty: Int
+    var bonus: Int
+    
+    // computed property (Getters and setters!)
+    var score: Int{
+        get {
+         return (enemiesDestroyed * 1000) + bonus + (livesRemaining * 5000) - penalty
+        }
+    }
+    
+    init(name: String){
+        self.name = name
+        self.livesRemaining = 3
+        self.enemiesDestroyed = 0
+        self.penalty = 0
+        self.bonus = 0
+    }
+}
+//Creating Player
+let newPlayer = Player(name: "Jordan")
+
+// as the game progresses, values change...
+newPlayer.enemiesDestroyed = 326
+newPlayer.penalty = 872
+newPlayer.bonus = 25000
+
+print("The final score is: \(newPlayer.score)")
+
+class Intake {
+    var amount: Int
+    enum LiquidType{
+        case water, coffee, soda
+    }
+    init(){
+        amount = 0
+    }
+}
+
+struct Liquid{
+    
+}
