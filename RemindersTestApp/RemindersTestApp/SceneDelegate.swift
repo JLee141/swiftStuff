@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Thirst Counter
+//  RemindersTestApp
 //
-//  Created by Jordan Lee on 7/10/20.
+//  Created by Jordan Lee on 7/26/20.
 //  Copyright © 2020 Jordan Lee. All rights reserved.
 //
 
@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = MainPage()
+        let toDoStorage = ToDoStorage()
+        let contentView = ToDoList().environmentObject(toDoStorage)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

@@ -10,13 +10,15 @@
 		7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */; };
 		7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFAE24B8E45900481EDC /* AppDelegate.swift */; };
 		7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB024B8E45900481EDC /* SceneDelegate.swift */; };
-		7A73BFB324B8E45900481EDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB224B8E45900481EDC /* ContentView.swift */; };
+		7A73BFB324B8E45900481EDC /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB224B8E45900481EDC /* MainPage.swift */; };
 		7A73BFB524B8E45A00481EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB424B8E45A00481EDC /* Assets.xcassets */; };
 		7A73BFB824B8E45A00481EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB724B8E45A00481EDC /* Preview Assets.xcassets */; };
 		7A73BFBB24B8E45A00481EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB924B8E45A00481EDC /* LaunchScreen.storyboard */; };
 		7A73BFC624B8E45A00481EDC /* Thirst_CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFC524B8E45A00481EDC /* Thirst_CounterTests.swift */; };
 		7A73BFD124B8E45A00481EDC /* Thirst_CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFD024B8E45A00481EDC /* Thirst_CounterUITests.swift */; };
 		7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFDE24B9A58E00481EDC /* dataFile.swift */; };
+		7ABB76AF24CA28ED00B01B1D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */; };
+		7ABB76B124CA322400B01B1D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB76B024CA322400B01B1D /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,7 @@
 		7A73BFAB24B8E45900481EDC /* Thirst Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thirst Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A73BFAE24B8E45900481EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A73BFB024B8E45900481EDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7A73BFB224B8E45900481EDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A73BFB224B8E45900481EDC /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		7A73BFB424B8E45A00481EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A73BFB724B8E45A00481EDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7A73BFBA24B8E45A00481EDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		7A73BFD024B8E45A00481EDC /* Thirst_CounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirst_CounterUITests.swift; sourceTree = "<group>"; };
 		7A73BFD224B8E45A00481EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A73BFDE24B9A58E00481EDC /* dataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataFile.swift; sourceTree = "<group>"; };
+		7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7ABB76B024CA322400B01B1D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +109,15 @@
 			children = (
 				7A73BFAE24B8E45900481EDC /* AppDelegate.swift */,
 				7A73BFB024B8E45900481EDC /* SceneDelegate.swift */,
-				7A73BFB224B8E45900481EDC /* ContentView.swift */,
+				7A73BFB224B8E45900481EDC /* MainPage.swift */,
 				7A73BFDE24B9A58E00481EDC /* dataFile.swift */,
 				7A73BFB424B8E45A00481EDC /* Assets.xcassets */,
 				7A73BFB924B8E45A00481EDC /* LaunchScreen.storyboard */,
 				7A73BFBC24B8E45A00481EDC /* Info.plist */,
 				7A73BFB624B8E45A00481EDC /* Preview Content */,
 				7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */,
+				7ABB76B024CA322400B01B1D /* History.swift */,
+				7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */,
 			);
 			path = "Thirst Counter";
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 			files = (
 				7A73BFBB24B8E45A00481EDC /* LaunchScreen.storyboard in Resources */,
 				7A73BFB824B8E45A00481EDC /* Preview Assets.xcassets in Resources */,
+				7ABB76AF24CA28ED00B01B1D /* Launch Screen.storyboard in Resources */,
 				7A73BFB524B8E45A00481EDC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,10 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ABB76B124CA322400B01B1D /* History.swift in Sources */,
 				7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */,
 				7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */,
 				7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */,
-				7A73BFB324B8E45900481EDC /* ContentView.swift in Sources */,
+				7A73BFB324B8E45900481EDC /* MainPage.swift in Sources */,
 				7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

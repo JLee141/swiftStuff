@@ -10,8 +10,36 @@ import Foundation
 import SwiftUI
 import Swift
 
-struct Liquid{
-    //var amountOfWater: Int
+class Liquid: ObservableObject {
+    @Published var water: Int
+    //var dailyLiquid: Int
+    var waterRecorededDaily:[Int] = []
+    var waterGoal: Int
+    init(water: Int) {
+        self.water = water
+        self.waterRecorededDaily.append(water)
+        self.waterGoal = 135
+    }
     
+    func dailyWaterDisplay() -> String {
+        let dailyWaterString = "\(water)"
+        return dailyWaterString
+    }
+    
+    func plusOne(displayWater: Int) {
+        self.water = displayWater+1
+    }
+    
+    func minusOne(displayWater: Int) {
+        self.water = displayWater-1
+    }
+    
+    func addWaterDaily(waterDisplay: Int) {
+        self.water = self.water+waterDisplay
+    }
+    
+}
+
+class waterRecord: ObservableObject {
     
 }
