@@ -35,7 +35,7 @@ struct MainPage: View {
                     Text("\(userWater.dailyWaterDisplay())")
                         .font(.largeTitle)
                         .foregroundColor(Color.red)
-                } else if userWater.water <= 80 {
+                } else if userWater.water <= 100 {
                     Text("\(self.userWater.dailyWaterDisplay())")
                         .font(.largeTitle)
                         .foregroundColor(Color.yellow)
@@ -50,7 +50,7 @@ struct MainPage: View {
                 Text("")
                 Button(action: {
                     self.userWater.addWaterDaily(waterDisplay: self.lastWaterAdded)
-                    self.waterTotal = self.lastWaterAdded
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add previous / \(lastWaterAdded)").font(.body).background(Color.blue).foregroundColor(Color.white).cornerRadius(15)
                 }
@@ -66,7 +66,7 @@ struct MainPage: View {
                 HStack {
                     Button(action: {
                         self.minusOne()
-                        //self.presentationMode.wrappedValue.dismiss()
+                        self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Image(systemName: "minus")
                                 .font(.title)
