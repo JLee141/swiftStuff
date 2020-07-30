@@ -18,11 +18,16 @@ struct MainPage: View {
         self.waterTotal+=1
     }
     
-    func minusOne(){
+    func minusOne() {
         self.waterTotal-=1
     }
+    
+    func addToTotal(water:Int){
+        self.waterTotal = water
+    }
 
-     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         //Testing out Button Actions in the view
             VStack {
@@ -49,15 +54,17 @@ struct MainPage: View {
                 Text("\(waterTotal) OZ").bold().font(.largeTitle)
                 Text("")
                 Button(action: {
-                    self.userWater.addWaterDaily(waterDisplay: self.lastWaterAdded)
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.addToTotal(water: self.lastWaterAdded)
                 }) {
                     Text("Add previous / \(lastWaterAdded)").font(.body).background(Color.blue).foregroundColor(Color.white).cornerRadius(15)
                 }
                 Spacer()
                 Button(action: {
                     self.userWater.addWaterDaily(waterDisplay: self.waterTotal)
+                    if self.waterTotal == 0{
+                    }else{
                     self.lastWaterAdded = self.waterTotal
+                    }
                     self.waterTotal = 0
                 }) {
                     Text("Confirm").font(.title).background(Color.blue).foregroundColor(Color.white).cornerRadius(15)
@@ -82,7 +89,6 @@ struct MainPage: View {
                     
                     Button(action: {
                         self.addOne()
-                        self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Spacer()
                         Image(systemName: "plus")
