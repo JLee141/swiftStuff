@@ -3,4 +3,70 @@
    uuid = "2F4B7D20-2065-420B-9426-69ED0EC690E7"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3E999BE-9319-46BC-B28D-B28A8C06F9AF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thirst Counter/MainPage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "addToTotal(water:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A94E9F47-A8AA-459C-967A-A46A0271EB92"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thirst Counter/MainPage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "MainPage"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "A94E9F47-A8AA-459C-967A-A46A0271EB92 - 963c9f37813347c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirst_Counter.MainPage.presentationMode.getter : SwiftUI.Binding&lt;SwiftUI.PresentationMode&gt;"
+                  moduleName = "Thirst Counter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jlee/Documents/devStuff/codePlayground/swiftStuff/Thirst%20Counter/Thirst%20Counter/MainPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "193">
+               </Location>
+               <Location
+                  uuid = "A94E9F47-A8AA-459C-967A-A46A0271EB92 - e4b35eee5cb82f80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirst_Counter.MainPage.init() -&gt; Thirst_Counter.MainPage"
+                  moduleName = "Thirst Counter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jlee/Documents/devStuff/codePlayground/swiftStuff/Thirst%20Counter/Thirst%20Counter/MainPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "261">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

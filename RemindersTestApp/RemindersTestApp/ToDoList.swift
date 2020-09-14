@@ -7,13 +7,13 @@
 //
 
 import SwiftUI
+
 struct ToDoList: View {
     @EnvironmentObject var toDoStorage: ToDoStorage
     
     var body: some View {
         
-        NavigationView{
-            
+        NavigationView {
             List {
                 ForEach(self.toDoStorage.toDos) {
                     todo in if todo.important {

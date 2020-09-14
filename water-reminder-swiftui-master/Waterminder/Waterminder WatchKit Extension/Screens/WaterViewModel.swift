@@ -11,11 +11,13 @@ class WaterViewModel: ObservableObject {
         round(drinkingTarget) == .zero
     }
     
+    /*
     var targetText: String {
         isGoalReached
             ? "💦 Nice job! 💦"
             : "Target: \(drinkingTarget.toMilliliters())"
     }
+     */
     
     var minimumInterval: Double {
         min(50, drinkingTarget)

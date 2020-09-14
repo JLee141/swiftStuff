@@ -28,7 +28,7 @@ struct WaterView: View {
 
 extension WaterView {
     func targetLabel() -> some View {
-        Text(viewModel.targetText)
+        Text("\(viewModel.drinkingTarget)")
         .font(.system(size: 20, weight: .semibold, design: .rounded))
     }
     
