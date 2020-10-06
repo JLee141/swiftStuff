@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */; };
+		7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10CC58252535620086B1FA /* WaterGoalView.swift */; };
 		7A24A27D24D6419800F621D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A27C24D6419800F621D3 /* Profile.swift */; };
 		7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */; };
-		7A36A097250083D20066E78E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A36A096250083D20066E78E /* Settings.swift */; };
 		7A6ABD4224E5A5FC0075E2C5 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */; };
 		7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFAE24B8E45900481EDC /* AppDelegate.swift */; };
 		7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB024B8E45900481EDC /* SceneDelegate.swift */; };
@@ -25,6 +25,7 @@
 		7A9DD71F24F719B7002A3288 /* WaveBackground2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9DD71E24F719B7002A3288 /* WaveBackground2.swift */; };
 		7ABB76AF24CA28ED00B01B1D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */; };
 		7ABB76B124CA322400B01B1D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB76B024CA322400B01B1D /* History.swift */; };
+		7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF10F44251A8B1200A62C14 /* SettingsView.swift */; };
 		7AF9722324EA1EE200FCB30E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF9722224EA1EE200FCB30E /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +48,9 @@
 
 /* Begin PBXFileReference section */
 		7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidIntake.swift; sourceTree = "<group>"; };
+		7A10CC58252535620086B1FA /* WaterGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalView.swift; sourceTree = "<group>"; };
 		7A24A27C24D6419800F621D3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackgroundView.swift; sourceTree = "<group>"; };
-		7A36A096250083D20066E78E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		7A73BFAB24B8E45900481EDC /* Thirst Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thirst Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A73BFAE24B8E45900481EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		7A9DD71E24F719B7002A3288 /* WaveBackground2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackground2.swift; sourceTree = "<group>"; };
 		7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7ABB76B024CA322400B01B1D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		7AF10F44251A8B1200A62C14 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7AF9722024EA1EE200FCB30E /* Thirst Counter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Thirst Counter.entitlements"; sourceTree = "<group>"; };
 		7AF9722224EA1EE200FCB30E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -174,6 +176,8 @@
 				7A73BFB224B8E45900481EDC /* MainPage.swift */,
 				7ABB76B024CA322400B01B1D /* History.swift */,
 				7A9DD71E24F719B7002A3288 /* WaveBackground2.swift */,
+				7AF10F44251A8B1200A62C14 /* SettingsView.swift */,
+				7A10CC58252535620086B1FA /* WaterGoalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,7 +187,6 @@
 			children = (
 				7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */,
 				7A73BFDE24B9A58E00481EDC /* dataFile.swift */,
-				7A36A096250083D20066E78E /* Settings.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -330,16 +333,17 @@
 			files = (
 				7A77FF2924EF52DD00747557 /* ViewStyles.swift in Sources */,
 				7A9DD71F24F719B7002A3288 /* WaveBackground2.swift in Sources */,
+				7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */,
 				7A6ABD4224E5A5FC0075E2C5 /* Buttons.swift in Sources */,
 				7ABB76B124CA322400B01B1D /* History.swift in Sources */,
 				7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */,
 				7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */,
-				7A36A097250083D20066E78E /* Settings.swift in Sources */,
 				7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */,
 				7A24A27D24D6419800F621D3 /* Profile.swift in Sources */,
 				7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */,
 				7A73BFB324B8E45900481EDC /* MainPage.swift in Sources */,
 				7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */,
+				7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,12 +516,13 @@
 				DEVELOPMENT_TEAM = TF32WF8CHS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Thirst Counter/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-Counter";
+				MARKETING_VERSION = 0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = TitianProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -534,12 +539,13 @@
 				DEVELOPMENT_TEAM = TF32WF8CHS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Thirst Counter/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "titanBack.Thirst-Counter";
+				MARKETING_VERSION = 0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = TitianProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
