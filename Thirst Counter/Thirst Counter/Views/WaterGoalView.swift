@@ -7,7 +7,10 @@
 //
 
 import SwiftUI
+
+//This is for the
 class NumbersOnly: ObservableObject {
+    @State private var showingAlert = false
     @Published var value = "" {
         didSet {
             let filtered = value.filter { $0.isNumber }
@@ -16,36 +19,55 @@ class NumbersOnly: ObservableObject {
                 value = filtered
             }
         }
+//        //Logic I will add later for an alert over a certain amount of water that a user inputs.
+//        willSet {
+//            if (Int(newValue))! > 20000 {
+//                self.showingAlert = true
+//            }
+//        }
     }
 }
 struct WaterGoalView: View {
+    @Environment(\.presentationMode) var presentationMode
+    //@State private var showingAlert = false
+    @State var waterGoalViewDisplayed:Bool
     @EnvironmentObject var userWater: Liquid
-    @State var waterGoalBinding:Int
-    @State var someText = ""
-    @State var show = false
-    @State var numberBindingText = ""
+    @State var waterGoalBinding:Int = 0
+    @State var input = NumbersOnly()
     
     var body: some View {
         
         VStack {
-
             Spacer()
             VStack {
                 
                 Text("How much water would you like to drink today? 💧")
                     .font(.title)
-                
             }
-            TextField("Number of OZ, currently \(userWater.waterGoal)", text: $numberBindingText, onCommit: {
-                
-            }).keyboardType(.numberPad)
+            HStack {
+            Stepper(value: $waterGoalBinding, in: 0...500) {
+                Text("Number Of OZ:")
+                TextField("\(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
+                    self.waterGoalBinding = Int(input.value)!
+                    
+                }).keyboardType(.numberPad)
             .padding()
+            }
+            }
+            HStack {
+                Spacer()
+                
+                Spacer()
+            }
             Spacer()
             Button(action: {
-                //userWater.recordWaterGoal(waterGoalRecord: waterGoalBinding)
-                
+                userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                    Text("Confirm")
+                    .background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)
+                        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+                    .font(.title)
                 }
             }
         
@@ -56,6 +78,6 @@ struct WaterGoalView: View {
 
 struct WaterGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        WaterGoalView(waterGoalBinding: 102)
+        WaterGoalView(waterGoalViewDisplayed: true, waterGoalBinding: 102)
     }
 }

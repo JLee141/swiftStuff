@@ -12,9 +12,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
-                NavigationLink(destination: labelView()){
-                    Text("Press Me :)")
-                }
+                    Button(action: {
+                        NavigationLink(destination: labelView()){
+                        }
+                    }, label: {
+                        Text("Button")
+                    })
         ZStack {
             
             Rectangle()

@@ -56,7 +56,6 @@ struct WaveBackgroundView: View {
                 waveBackground2
                     .offset(x: 0, y: 20)
             }
-            
         }
     }
 }

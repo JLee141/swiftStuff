@@ -7,10 +7,19 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct labelView: View {
+    
+    @State var aName: String = " "
+    @State var yourName: String = " "
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            TextField("Enter Name", text: $aName)
+        }
+        
     }
 }
 
