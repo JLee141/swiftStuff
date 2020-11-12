@@ -28,9 +28,10 @@ class NumbersOnly: ObservableObject {
     }
 }
 struct WaterGoalView: View {
+    //PresentationMode gets me out of this view when I change it //Used it in the confirm button.
     @Environment(\.presentationMode) var presentationMode
     //@State private var showingAlert = false
-    @State var waterGoalViewDisplayed:Bool
+
     @EnvironmentObject var userWater: Liquid
     @State var waterGoalBinding:Int = 0
     @State var input = NumbersOnly()
@@ -40,44 +41,39 @@ struct WaterGoalView: View {
         VStack {
             Spacer()
             VStack {
-                
                 Text("How much water would you like to drink today? 💧")
                     .font(.title)
+                    .padding()
             }
             HStack {
-            Stepper(value: $waterGoalBinding, in: 0...500) {
                 Text("Number Of OZ:")
+                    .padding()
                 TextField("\(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
                     self.waterGoalBinding = Int(input.value)!
-                    
                 }).keyboardType(.numberPad)
-            .padding()
+                .padding()
+                .multilineTextAlignment(.center)
             }
-            }
-            HStack {
-                Spacer()
-                
-                Spacer()
-            }
+            
             Spacer()
+            //Confirms binding for watergoal and dismisses this sheet
             Button(action: {
+                self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
                 self.presentationMode.wrappedValue.dismiss()
+                
             }) {
                    Text("Confirm")
                     .background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                     .font(.title)
-                }
             }
-        
         }
-    
     }
-
+}
 
 struct WaterGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        WaterGoalView(waterGoalViewDisplayed: true, waterGoalBinding: 102)
+        WaterGoalView(waterGoalBinding: 102)
     }
 }

@@ -20,25 +20,30 @@ class Liquid: ObservableObject {
     //To use later to record dates with amount of water consumed
     //var waterRecorededDaily:[Int] = []
     
+    @State private var congratsViewAlert = false
     @Published var waterGoal: Int
-    var unitMeasurement:String
+    var unitMeasurement: String
+    @State var lastWaterAdded: Int
+    @State var secondLaunch: Bool
     
     //This is to create a reference date so that water can reset everyday
-    var referenceDate = Date()
+    var currentDate = Date()
+    var previousDate = Date()
+    
     //let calendar = Calendar.current
-    
-    var dateComponents = DateComponents(calendar: Calendar.current, hour:24)
-    
-    init(Water: Int,UnitMeasurement: String, WaterGoal: Int ) {
+
+    init(Water: Int,UnitMeasurement: String, WaterGoal: Int, LastWaterAdded: Int,SecondLaunch: Bool) {
         self.dailyWater = Water
         self.userName = ""
         self.unitMeasurement = UnitMeasurement
         self.waterGoal = WaterGoal
+        self.lastWaterAdded = LastWaterAdded
+        self.secondLaunch = SecondLaunch
+        //self.previousDate = savedDate
     }
     
     //This displays the TOTAL water for the day and color coats it based on completion.
     func dailyWaterDisplay() -> Text {
-        //let dailyWaterString = "\(water)"
         let waterString = "\(self.dailyWater)"
         if dailyWater == 0 {
             return Text("\(waterString) \(unitMeasurement)")
@@ -56,10 +61,10 @@ class Liquid: ObservableObject {
             return Text("\(waterString) \(unitMeasurement)")
                     .font(.largeTitle)
                     .foregroundColor(Color.green)
-            }
+        }
         return Text("\(waterString) \(unitMeasurement)")
             .font(.largeTitle)
-            .foregroundColor(Color.gray)
+            .foregroundColor(Color.yellow)
     }
     
     //Adds +1 to the water displayed.
@@ -76,13 +81,7 @@ class Liquid: ObservableObject {
     }
     func waterGoalDisplay(waterGoalView: Bool) -> Text {
         let waterGoalString = "\(self.waterGoal)"
-        if waterGoalView {
-        
         return Text("\(waterGoalString)")
-        } else {
-            let waterGoalString = "\(self.waterGoal)"
-            return Text("\(waterGoalString)")
-        }
     }
     func plusOneWaterGoal(displayWater: Int) {
         self.waterGoal = displayWater+1
@@ -97,7 +96,11 @@ class Liquid: ObservableObject {
         //This will help when the app closes in the background the app will remember the amount of water.
         UserDefaults.standard.set(self.dailyWater, forKey: "Water")
     }
-    
+    func recordLastWater(lastWaterAdded: Int) {
+        self.lastWaterAdded = lastWaterAdded
+        
+        UserDefaults.standard.set(self.lastWaterAdded, forKey: "LastWaterAdded")
+    }
     //Resets total water daily to 0 for a forced reset.
     func resetButton() {
         self.dailyWater = 0
@@ -108,6 +111,16 @@ class Liquid: ObservableObject {
         self.waterGoal = waterGoal
         //Records
         UserDefaults.standard.set(self.waterGoal, forKey:"WaterGoal")
+    }
+    
+    func waterPreviousDisplay() -> Text {
+        let waterPrevious = "\(self.lastWaterAdded)"
+        return Text("Previous : \(waterPrevious) oz")
+    }
+    
+    func secondLaunchSet() {
+        self.secondLaunch = true
+        UserDefaults.standard.set(self.secondLaunch, forKey: "SecondLaunch")
     }
     
 }

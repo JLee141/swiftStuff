@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Thirst_Counter
+//@testable import Thirst_Counter
 
 class Thirst_CounterTests: XCTestCase {
 
