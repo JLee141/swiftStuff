@@ -23,7 +23,6 @@ class Liquid: ObservableObject {
     @State private var congratsViewAlert = false
     @Published var waterGoal: Int
     var unitMeasurement: String
-    @State var lastWaterAdded: Int
     @State var secondLaunch: Bool
     
     //This is to create a reference date so that water can reset everyday
@@ -32,12 +31,11 @@ class Liquid: ObservableObject {
     
     //let calendar = Calendar.current
 
-    init(Water: Int,UnitMeasurement: String, WaterGoal: Int, LastWaterAdded: Int,SecondLaunch: Bool) {
+    init(Water: Int,UnitMeasurement: String, WaterGoal: Int,SecondLaunch: Bool) {
         self.dailyWater = Water
         self.userName = ""
         self.unitMeasurement = UnitMeasurement
         self.waterGoal = WaterGoal
-        self.lastWaterAdded = LastWaterAdded
         self.secondLaunch = SecondLaunch
         //self.previousDate = savedDate
     }
@@ -96,11 +94,11 @@ class Liquid: ObservableObject {
         //This will help when the app closes in the background the app will remember the amount of water.
         UserDefaults.standard.set(self.dailyWater, forKey: "Water")
     }
-    func recordLastWater(lastWaterAdded: Int) {
-        self.lastWaterAdded = lastWaterAdded
-        
-        UserDefaults.standard.set(self.lastWaterAdded, forKey: "LastWaterAdded")
-    }
+//    func recordLastWater(lastWaterAdded: Int) {
+//        self.lastWaterAdded = lastWaterAdded
+//
+//        UserDefaults.standard.set(self.lastWaterAdded, forKey: "LastWaterAdded")
+//    }
     //Resets total water daily to 0 for a forced reset.
     func resetButton() {
         self.dailyWater = 0
@@ -113,16 +111,11 @@ class Liquid: ObservableObject {
         UserDefaults.standard.set(self.waterGoal, forKey:"WaterGoal")
     }
     
-    func waterPreviousDisplay() -> Text {
-        let waterPrevious = "\(self.lastWaterAdded)"
-        return Text("Previous : \(waterPrevious) oz")
-    }
-    
-    func secondLaunchSet() {
-        self.secondLaunch = true
-        UserDefaults.standard.set(self.secondLaunch, forKey: "SecondLaunch")
-    }
-    
+//    func waterPreviousDisplay() -> Text {
+//        let waterPrevious = "\(self.lastWaterAdded)"
+//        return Text("Previous : \(waterPrevious) oz")
+//    }
+    //UserDefaults.standard.integer(forKey: "LastWaterAdded")
 }
 
 class waterRecord: ObservableObject {

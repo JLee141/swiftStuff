@@ -9,6 +9,7 @@
 import SwiftUI
 import Swift
 import ConfettiView
+import UserNotifications
 
 struct MainPage: View {
     enum SheetView {
@@ -16,19 +17,24 @@ struct MainPage: View {
         case firstLaunch
         case goalView
     }
-    var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), LastWaterAdded: UserDefaults.standard.integer(forKey: "LastWaterAdded"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
-    
+    var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
+    //WaterTotal is used as a binding concept to calculate user's water throughout the
     @State var waterTotal: Int = 0
     @State var lastWaterAdded: Int = 0
     @State var showGoalView = false
-    @State var activeGoalView = SheetView.none
     @State var showFirstLaunch = false
     @State var waterGoalNumber = 0
     let impactMed = UIImpactFeedbackGenerator(style: .medium)
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+    let impactLight = UIImpactFeedbackGenerator(style: .light)
+    //Change the key to true to emulate a first time setup EXAMPLE: True is default for application, set false to reset.
+    let firstTimeLaunchKey = false
+    @State var todaysDate = Date()
+    let dateFormatter = DateFormatter()
     
-    @State var todayDate = DateComponents()
-    @State var previousDate = DateComponents()
+    func isKeySetInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
     
     //These functions control the variable water total which is what is shown
     func addOne() {
@@ -58,28 +64,31 @@ struct MainPage: View {
         return ConfettiCelebrationView()
     }
     
-    func firstTimeLaunch() -> SheetView {
-        if userWater.waterGoal == 0 {
-            activeGoalView = SheetView.firstLaunch
-            return activeGoalView
-        } else {
-            activeGoalView = SheetView.none
-            return activeGoalView
+    func dateCheck() {
+        if !isKeySetInUserDefaults(key: "oldDate")  {
+            Text("THIS WORKS!")
         }
     }
-    
-//    func dateCheck() {
-//        if userWater.previousDate == nil {
-//            userWater.previousDate = Date()
-//            UserDefaults
-//        }
-//    }
     
     @State private var showingAlert = false
     
     var body: some View {
         ZStack {
             celebrationView(waterTotal: waterTotal)
+            if showFirstLaunch == true {
+                withAnimation(Animation.easeIn) {
+                    ZStack {
+                        
+                    }.sheet(isPresented: $showFirstLaunch, onDismiss: {
+                        self.waterGoalNumber = userWater.waterGoal
+                        showFirstLaunch = false
+                        
+                    }) {
+                        WelcomeScreen(waterGoalBinding: userWater.waterGoal)
+                            .environmentObject(userWater)
+                        }
+                }
+            }
             HStack {
                 VStack {
                         HStack {
@@ -88,7 +97,6 @@ struct MainPage: View {
                                 .foregroundColor(.blue)
                             
                             Button(action: {
-                                activeGoalView = .firstLaunch
                                 self.showGoalView = true
                             }){
                                 Text("\(self.waterGoalNumber)")
@@ -96,13 +104,8 @@ struct MainPage: View {
                             }.sheet(isPresented: $showGoalView, onDismiss: {
                                 self.waterGoalNumber = userWater.waterGoal
                             }) {
-                                if activeGoalView == SheetView.firstLaunch {
-                                    WelcomeScreen(waterGoalBinding: userWater.waterGoal)
-                                    .environmentObject(userWater)
-                                } else {
                                 WaterGoalView(waterGoalBinding: userWater.waterGoal)
                                     .environmentObject(userWater)
-                                    }
                                }
                             }.padding()
                             .animation(.spring())
@@ -144,19 +147,24 @@ struct MainPage: View {
 
                 
                 Button(action: {
-                    impactMed.impactOccurred()
+                    impactLight.impactOccurred()
                     self.addToTotal(water: self.lastWaterAdded)
+                    
                 }) {
-                    Text("Previous : \(self.lastWaterAdded) oz").font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
-                        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+                    Text("Previous : \(self.lastWaterAdded) oz")
+                        .font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
+                            .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+//                    Text("Previous : \(userWater.lastWaterAdded) oz").font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
+//                        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                 }
                 Spacer()
                 Button(action: {
-                    impactMed.impactOccurred()
+                    impactHeavy.impactOccurred()
                     self.userWater.recordWaterDaily(waterDisplay: self.waterTotal)
                     if self.waterTotal == 0{
                     }else{
                         self.lastWaterAdded = self.waterTotal
+                        UserDefaults.standard.set(self.lastWaterAdded,forKey: "LastWaterAdded")
                     }
                     self.waterTotal = 0
                 }) {
@@ -172,9 +180,10 @@ struct MainPage: View {
                             .cornerRadius(20)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                             .onTapGesture {
+                                impactLight.impactOccurred()
                                 minusOne()
                             }
-                            .onLongPressGesture(minimumDuration: 0.05){
+                            .onLongPressGesture(minimumDuration: 0.5){
                                 minusTen()
                                 impactHeavy.impactOccurred()
                             }
@@ -188,9 +197,10 @@ struct MainPage: View {
                             .cornerRadius(20)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                             .onTapGesture {
+                                impactLight.impactOccurred()
                                 addOne()
                             }
-                            .onLongPressGesture(minimumDuration: 0.05) {
+                            .onLongPressGesture(minimumDuration: 0.5) {
                                 addTen()
                                 impactHeavy.impactOccurred()
                                 }
@@ -198,14 +208,17 @@ struct MainPage: View {
                     }
             }
         }.onAppear(perform:) {
-//            if userWater.waterGoal == 0 {
-//                //self.activeGoalView = .firstLaunch
-//                self.showFirstLaunch = true
-//            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
-                        
-                    }
+            //This reflects the watergoal to the State Variable on the main page
             self.waterGoalNumber = userWater.waterGoal
+            dateCheck()
+            self.lastWaterAdded = UserDefaults.standard.integer(forKey: "LastWaterAdded")
+            if self.showFirstLaunch == UserDefaults.standard.bool(forKey: "FirstTimeLaunch") {
+                self.showFirstLaunch = true
+                UserDefaults.standard.set(firstTimeLaunchKey, forKey: "FirstTimeLaunch")
+            } else {
+                //Change the key to true or false to emulate a first time setup EXAMPLE: True is default for application, set false to reset.
+                UserDefaults.standard.set(firstTimeLaunchKey, forKey: "FirstTimeLaunch")
+            }
         }
     }
 }

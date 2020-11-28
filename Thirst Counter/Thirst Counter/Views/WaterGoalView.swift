@@ -51,16 +51,20 @@ struct WaterGoalView: View {
                 TextField("\(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
                     self.waterGoalBinding = Int(input.value)!
                 }).keyboardType(.numberPad)
-                .padding()
                 .multilineTextAlignment(.center)
+                .padding()
             }
             
             Spacer()
             //Confirms binding for watergoal and dismisses this sheet
             Button(action: {
+                if Int(input.value) == nil {
+                self.presentationMode.wrappedValue.dismiss()
+                } else {
                 self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
                 self.presentationMode.wrappedValue.dismiss()
+                }
                 
             }) {
                    Text("Confirm")
@@ -68,7 +72,7 @@ struct WaterGoalView: View {
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                     .font(.title)
             }
-        }
+        }.padding()
     }
 }
 
