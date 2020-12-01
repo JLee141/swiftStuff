@@ -46,8 +46,10 @@ struct WaterGoalView: View {
                     .padding()
             }
             HStack {
+                
                 Text("Number Of OZ:")
                     .padding()
+                    
                 TextField("\(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
                     self.waterGoalBinding = Int(input.value)!
                 }).keyboardType(.numberPad)
@@ -73,6 +75,7 @@ struct WaterGoalView: View {
                     .font(.title)
             }
         }.padding()
+        
     }
 }
 

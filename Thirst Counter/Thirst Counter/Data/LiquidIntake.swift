@@ -100,7 +100,7 @@ class Liquid: ObservableObject {
 //        UserDefaults.standard.set(self.lastWaterAdded, forKey: "LastWaterAdded")
 //    }
     //Resets total water daily to 0 for a forced reset.
-    func resetButton() {
+    func resetWater() {
         self.dailyWater = 0
         UserDefaults.standard.set(self.dailyWater, forKey: "Water")
     }

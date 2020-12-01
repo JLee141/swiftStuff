@@ -19,7 +19,7 @@ struct MainPage: View {
     }
     var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
     //WaterTotal is used as a binding concept to calculate user's water throughout the
-    @State var waterTotal: Int = 0
+    @State var waterTotalDisplay: Int = 0
     @State var lastWaterAdded: Int = 0
     @State var showGoalView = false
     @State var showFirstLaunch = false
@@ -27,34 +27,37 @@ struct MainPage: View {
     let impactMed = UIImpactFeedbackGenerator(style: .medium)
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     let impactLight = UIImpactFeedbackGenerator(style: .light)
-    //Change the key to true to emulate a first time setup EXAMPLE: True is default for application, set false to reset.
-    let firstTimeLaunchKey = false
+    //This key is true to find out the app has ran before. EXAMPLE: True is default for application, set false to reset run then next time change back.
+    var firstTimeLaunchKey = true
     @State var todaysDate = Date()
     let dateFormatter = DateFormatter()
+    //Alert Varible for my main page
+    @State private var showingAlert = false
     
+    //This function checks to see if a user default key is in a place
     func isKeySetInUserDefaults(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
     }
     
     //These functions control the variable water total which is what is shown
     func addOne() {
-        self.waterTotal+=1
+        self.waterTotalDisplay+=1
     }
     
     func addTen() {
-        self.waterTotal+=10
+        self.waterTotalDisplay+=10
     }
     
     func minusOne() {
-        self.waterTotal-=1
+        self.waterTotalDisplay-=1
     }
     
     func minusTen() {
-        self.waterTotal-=10
+        self.waterTotalDisplay-=10
     }
     
     func addToTotal(water:Int){
-        self.waterTotal = water
+        self.waterTotalDisplay = water
     }
     
     func celebrationView(waterTotal:Int) -> some View {
@@ -65,16 +68,19 @@ struct MainPage: View {
     }
     
     func dateCheck() {
-        if !isKeySetInUserDefaults(key: "oldDate")  {
-            Text("THIS WORKS!")
+        dateFormatter.dateFormat = "MMMM dd yyyy"
+        UserDefaults.standard.set(self.dateFormatter.string(from: todaysDate),forKey: "todaysDate")
+        if UserDefaults.standard.string(forKey: "oldDate") != UserDefaults.standard.string(forKey: "newDate") {
+            userWater.resetWater()
+            UserDefaults.standard.set(self.dateFormatter.string(from: todaysDate),forKey: "oldDate")
         }
     }
     
-    @State private var showingAlert = false
+    
     
     var body: some View {
         ZStack {
-            celebrationView(waterTotal: waterTotal)
+            celebrationView(waterTotal: waterTotalDisplay)
             if showFirstLaunch == true {
                 withAnimation(Animation.easeIn) {
                     ZStack {
@@ -130,18 +136,17 @@ struct MainPage: View {
                 
                 HStack {
                     Button(action: {
-                        self.userWater.resetButton()
+                        self.userWater.resetWater()
                         self.showingAlert = true
                     }) {
                         Text("Reset")
                         .alert(isPresented: $showingAlert) {
                             Alert(title: Text("Reset Complete!"), message: Text("Water is set back to 0, this does not reset your goal 😎"), dismissButton: .default(Text("Sounds Good")))
                        }
-                            
                     }
                 }
                 Spacer()
-                Text("\(waterTotal) oz")
+                Text("\(waterTotalDisplay) oz")
                     .bold()
                     .font(.largeTitle)
 
@@ -160,30 +165,31 @@ struct MainPage: View {
                 Spacer()
                 Button(action: {
                     impactHeavy.impactOccurred()
-                    self.userWater.recordWaterDaily(waterDisplay: self.waterTotal)
-                    if self.waterTotal == 0{
+                    self.userWater.recordWaterDaily(waterDisplay: self.waterTotalDisplay)
+                    if self.waterTotalDisplay == 0{
                     }else{
-                        self.lastWaterAdded = self.waterTotal
+                        self.lastWaterAdded = self.waterTotalDisplay
                         UserDefaults.standard.set(self.lastWaterAdded,forKey: "LastWaterAdded")
                     }
-                    self.waterTotal = 0
+                    self.waterTotalDisplay = 0
                 }) {
                     Text("Add").font(.largeTitle).background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                 }
+                
                 HStack {
                     Button(action: {
                     }) {
                         Image(systemName: "minus")
-                            .font(.system(size: 25, weight: .semibold, design: .rounded))
-                            .frame(width: 60, height: 60)
-                            .cornerRadius(20)
-                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            .onTapGesture {
+                        .font(.system(size: 25, weight: .semibold, design: .rounded))
+                        .frame(width: 60, height: 60)
+                        .cornerRadius(20)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .onTapGesture {
                                 impactLight.impactOccurred()
                                 minusOne()
                             }
-                            .onLongPressGesture(minimumDuration: 0.5){
+                        .onLongPressGesture(minimumDuration: 0.5){
                                 minusTen()
                                 impactHeavy.impactOccurred()
                             }
@@ -210,13 +216,15 @@ struct MainPage: View {
         }.onAppear(perform:) {
             //This reflects the watergoal to the State Variable on the main page
             self.waterGoalNumber = userWater.waterGoal
+            
+            //Sets the proper date format for how dates are recorded in the app
+
             dateCheck()
             self.lastWaterAdded = UserDefaults.standard.integer(forKey: "LastWaterAdded")
-            if self.showFirstLaunch == UserDefaults.standard.bool(forKey: "FirstTimeLaunch") {
+            
+            //This controls the firsttime experience
+            if self.firstTimeLaunchKey != UserDefaults.standard.bool(forKey: "FirstTimeLaunch") {
                 self.showFirstLaunch = true
-                UserDefaults.standard.set(firstTimeLaunchKey, forKey: "FirstTimeLaunch")
-            } else {
-                //Change the key to true or false to emulate a first time setup EXAMPLE: True is default for application, set false to reset.
                 UserDefaults.standard.set(firstTimeLaunchKey, forKey: "FirstTimeLaunch")
             }
         }

@@ -32,10 +32,13 @@ struct WelcomeScreen: View {
             }
             Spacer()
             Button(action: {
+                if Int(input.value) == nil {
+                self.presentationMode.wrappedValue.dismiss()
+                }else {
                 self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
-                
                 self.presentationMode.wrappedValue.dismiss()
+                }
             }, label: {
                 Text("Confirm")
                  .background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)
