@@ -61,18 +61,23 @@ struct MainPage: View {
     }
     
     func celebrationView(waterTotal:Int) -> some View {
-        if waterTotal == userWater.waterGoal {
+        if waterTotal >= userWater.waterGoal {
+            ConfettiCelebrationView().isShowingConfetti = true
             return ConfettiCelebrationView()
         }
         return ConfettiCelebrationView()
     }
     
+    //This date check is responsible for resetting water goal every day
     func dateCheck() {
-        dateFormatter.dateFormat = "MMMM dd yyyy"
-        UserDefaults.standard.set(self.dateFormatter.string(from: todaysDate),forKey: "todaysDate")
-        if UserDefaults.standard.string(forKey: "oldDate") != UserDefaults.standard.string(forKey: "newDate") {
+        dateFormatter.dateFormat = "MMddyyyy"
+        let todaysDateInt = Int(dateFormatter.string(from: todaysDate))
+        UserDefaults.standard.set(todaysDateInt,forKey: "todaysDate")
+        if !isKeySetInUserDefaults(key: UserDefaults.standard.string(forKey: "oldDate")!){
+            UserDefaults.standard.set(todaysDateInt,forKey: "oldDate")
+        }else if UserDefaults.standard.integer(forKey: "oldDate") != UserDefaults.standard.integer(forKey: "newDate") {
             userWater.resetWater()
-            UserDefaults.standard.set(self.dateFormatter.string(from: todaysDate),forKey: "oldDate")
+            UserDefaults.standard.set(todaysDateInt,forKey: "oldDate")
         }
     }
     
@@ -84,11 +89,9 @@ struct MainPage: View {
             if showFirstLaunch == true {
                 withAnimation(Animation.easeIn) {
                     ZStack {
-                        
                     }.sheet(isPresented: $showFirstLaunch, onDismiss: {
                         self.waterGoalNumber = userWater.waterGoal
                         showFirstLaunch = false
-                        
                     }) {
                         WelcomeScreen(waterGoalBinding: userWater.waterGoal)
                             .environmentObject(userWater)
@@ -218,7 +221,6 @@ struct MainPage: View {
             self.waterGoalNumber = userWater.waterGoal
             
             //Sets the proper date format for how dates are recorded in the app
-
             dateCheck()
             self.lastWaterAdded = UserDefaults.standard.integer(forKey: "LastWaterAdded")
             

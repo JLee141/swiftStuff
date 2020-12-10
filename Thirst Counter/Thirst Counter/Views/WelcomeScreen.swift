@@ -14,7 +14,7 @@ struct WelcomeScreen: View {
     @EnvironmentObject var userWater: Liquid
     @State var waterGoalBinding:Int = 0
     @Environment(\.presentationMode) var presentationMode
-    
+    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     var body: some View {
         VStack {
             Spacer()
@@ -33,10 +33,12 @@ struct WelcomeScreen: View {
             Spacer()
             Button(action: {
                 if Int(input.value) == nil {
+                impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
                 }else {
                 self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
+                impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
                 }
             }, label: {

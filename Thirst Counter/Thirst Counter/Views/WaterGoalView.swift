@@ -35,7 +35,7 @@ struct WaterGoalView: View {
     @EnvironmentObject var userWater: Liquid
     @State var waterGoalBinding:Int = 0
     @State var input = NumbersOnly()
-    
+    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     var body: some View {
         
         VStack {
@@ -46,13 +46,16 @@ struct WaterGoalView: View {
                     .padding()
             }
             HStack {
-                
+                Spacer()
                 Text("Number Of OZ:")
+                    .italic()
+                    .bold()
                     .padding()
                     
-                TextField("\(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
+                TextField("currently \(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
                     self.waterGoalBinding = Int(input.value)!
-                }).keyboardType(.numberPad)
+                })
+                .keyboardType(.numberPad)
                 .multilineTextAlignment(.center)
                 .padding()
             }
@@ -61,11 +64,15 @@ struct WaterGoalView: View {
             //Confirms binding for watergoal and dismisses this sheet
             Button(action: {
                 if Int(input.value) == nil {
+                impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
+                
                 } else {
                 self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
+                impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
+                
                 }
                 
             }) {
@@ -73,6 +80,7 @@ struct WaterGoalView: View {
                     .background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                     .font(.title)
+                
             }
         }.padding()
         
