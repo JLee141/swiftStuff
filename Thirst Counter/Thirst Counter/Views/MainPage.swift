@@ -12,11 +12,8 @@ import ConfettiView
 import UserNotifications
 
 struct MainPage: View {
-    enum SheetView {
-        case none
-        case firstLaunch
-        case goalView
-    }
+    
+    //The class I use to keep water organized, I reference it with userWater.
     var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
     //WaterTotal is used as a binding concept to calculate user's water throughout the
     @State var waterTotalDisplay: Int = 0
@@ -24,15 +21,26 @@ struct MainPage: View {
     @State var showGoalView = false
     @State var showFirstLaunch = false
     @State var waterGoalNumber = 0
+    
+    //All the haptic feedback calls I use in the app.
     let impactMed = UIImpactFeedbackGenerator(style: .medium)
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     let impactLight = UIImpactFeedbackGenerator(style: .light)
+    
     //This key is true to find out the app has ran before. EXAMPLE: True is default for application, set false to reset run then next time change back.
     var firstTimeLaunchKey = true
+    
+    //Todays Date, used to compare in Date function with old date
     @State var todaysDate = Date()
+    
+    //This formats the date so I can use it in my function.
     let dateFormatter = DateFormatter()
+    
+    
+    
     //Alert Varible for my main page
-    @State private var showingAlert = false
+    @State private var showingResetAlert = false
+    @State private var isShowingConfetti: Bool = false
     
     //This function checks to see if a user default key is in a place
     func isKeySetInUserDefaults(key: String) -> Bool {
@@ -59,6 +67,9 @@ struct MainPage: View {
     func addToTotal(water:Int){
         self.waterTotalDisplay = water
     }
+    //End of Water Total Display functions
+    
+    
     
     func celebrationView(waterTotal:Int) -> some View {
         if waterTotal >= userWater.waterGoal {
@@ -70,13 +81,17 @@ struct MainPage: View {
     
     //This date check is responsible for resetting water goal every day
     func dateCheck() {
+        todaysDate = Date()
         dateFormatter.dateFormat = "MMddyyyy"
         let todaysDateInt = Int(dateFormatter.string(from: todaysDate))
         UserDefaults.standard.set(todaysDateInt,forKey: "todaysDate")
-        if !isKeySetInUserDefaults(key: UserDefaults.standard.string(forKey: "oldDate")!){
-            UserDefaults.standard.set(todaysDateInt,forKey: "oldDate")
-        }else if UserDefaults.standard.integer(forKey: "oldDate") != UserDefaults.standard.integer(forKey: "newDate") {
-            userWater.resetWater()
+        let previousDateInt = UserDefaults.standard.integer(forKey: "oldDate")
+        if isKeySetInUserDefaults(key: "oldDate") {
+            if previousDateInt != todaysDateInt {
+                userWater.resetWater()
+                UserDefaults.standard.set(todaysDateInt,forKey: "oldDate")
+            }
+        } else {
             UserDefaults.standard.set(todaysDateInt,forKey: "oldDate")
         }
     }
@@ -84,6 +99,7 @@ struct MainPage: View {
     
     
     var body: some View {
+        //celebrationView(waterTotal:userWater.dailyWater)
         ZStack {
             celebrationView(waterTotal: waterTotalDisplay)
             if showFirstLaunch == true {
@@ -140,10 +156,10 @@ struct MainPage: View {
                 HStack {
                     Button(action: {
                         self.userWater.resetWater()
-                        self.showingAlert = true
+                        self.showingResetAlert = true
                     }) {
                         Text("Reset")
-                        .alert(isPresented: $showingAlert) {
+                        .alert(isPresented: $showingResetAlert) {
                             Alert(title: Text("Reset Complete!"), message: Text("Water is set back to 0, this does not reset your goal 😎"), dismissButton: .default(Text("Sounds Good")))
                        }
                     }
@@ -160,7 +176,7 @@ struct MainPage: View {
                     
                 }) {
                     Text("Previous : \(self.lastWaterAdded) oz")
-                        .font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
+                        .font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 50)
                             .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
 //                    Text("Previous : \(userWater.lastWaterAdded) oz").font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
 //                        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
@@ -192,7 +208,7 @@ struct MainPage: View {
                                 impactLight.impactOccurred()
                                 minusOne()
                             }
-                        .onLongPressGesture(minimumDuration: 0.5){
+                        .onLongPressGesture(minimumDuration: 0.3){
                                 minusTen()
                                 impactHeavy.impactOccurred()
                             }
@@ -209,7 +225,7 @@ struct MainPage: View {
                                 impactLight.impactOccurred()
                                 addOne()
                             }
-                            .onLongPressGesture(minimumDuration: 0.5) {
+                            .onLongPressGesture(minimumDuration: 0.3) {
                                 addTen()
                                 impactHeavy.impactOccurred()
                                 }
