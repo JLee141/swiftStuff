@@ -25,13 +25,13 @@
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-App-40x40@2x.png",
+      "filename" : "80.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Icon-App-40x40@3x.png",
+      "filename" : "120.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
@@ -103,7 +103,7 @@
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "iTunesArtwork@2x.png",
+      "filename" : "appstoreThristCounter.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

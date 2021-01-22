@@ -12,6 +12,7 @@
 		7A24A27D24D6419800F621D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A27C24D6419800F621D3 /* Profile.swift */; };
 		7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */; };
 		7A26B5AB25462EBF001C429C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7A26B5AA25462EBF001C429C /* Lottie */; };
+		7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E41DC25B0C5840067F39B /* DonationView.swift */; };
 		7A6ABD4224E5A5FC0075E2C5 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */; };
 		7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFAE24B8E45900481EDC /* AppDelegate.swift */; };
 		7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB024B8E45900481EDC /* SceneDelegate.swift */; };
@@ -25,6 +26,8 @@
 		7A76276F2562EF1100350C00 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76276E2562EF1100350C00 /* NotificationView.swift */; };
 		7A77FF2924EF52DD00747557 /* ViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77FF2824EF52DD00747557 /* ViewStyles.swift */; };
 		7A8595E62548DBEF007574D0 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8595E52548DBEF007574D0 /* WelcomeScreen.swift */; };
+		7A9413852593C5120010C3FF /* ButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9413842593C5120010C3FF /* ButtonTest.swift */; };
+		7AA5B73225A3CD1A00235F47 /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */; };
 		7AACE30A253F4D520074D416 /* ConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = 7AACE309253F4D520074D416 /* ConfettiView */; };
 		7ABB76AF24CA28ED00B01B1D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */; };
 		7ABB76B124CA322400B01B1D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB76B024CA322400B01B1D /* History.swift */; };
@@ -55,6 +58,7 @@
 		7A10CC58252535620086B1FA /* WaterGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalView.swift; sourceTree = "<group>"; };
 		7A24A27C24D6419800F621D3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackgroundView.swift; sourceTree = "<group>"; };
+		7A4E41DC25B0C5840067F39B /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		7A73BFAB24B8E45900481EDC /* Thirst Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thirst Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A73BFAE24B8E45900481EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		7A76276E2562EF1100350C00 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		7A77FF2824EF52DD00747557 /* ViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyles.swift; sourceTree = "<group>"; };
 		7A8595E52548DBEF007574D0 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		7A9413842593C5120010C3FF /* ButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTest.swift; sourceTree = "<group>"; };
+		7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSmall.swift; sourceTree = "<group>"; };
 		7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7ABB76B024CA322400B01B1D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		7ABE8734255606D900AF2D90 /* ConfettiCelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiCelebrationView.swift; sourceTree = "<group>"; };
@@ -188,6 +194,9 @@
 				7A8595E52548DBEF007574D0 /* WelcomeScreen.swift */,
 				7ABE8734255606D900AF2D90 /* ConfettiCelebrationView.swift */,
 				7A76276E2562EF1100350C00 /* NotificationView.swift */,
+				7A9413842593C5120010C3FF /* ButtonTest.swift */,
+				7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */,
+				7A4E41DC25B0C5840067F39B /* DonationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,13 +358,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */,
 				7A77FF2924EF52DD00747557 /* ViewStyles.swift in Sources */,
 				7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */,
+				7AA5B73225A3CD1A00235F47 /* WidgetSmall.swift in Sources */,
 				7A6ABD4224E5A5FC0075E2C5 /* Buttons.swift in Sources */,
 				7ABB76B124CA322400B01B1D /* History.swift in Sources */,
 				7A8595E62548DBEF007574D0 /* WelcomeScreen.swift in Sources */,
 				7ABE8735255606D900AF2D90 /* ConfettiCelebrationView.swift in Sources */,
 				7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */,
+				7A9413852593C5120010C3FF /* ButtonTest.swift in Sources */,
 				7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */,
 				7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */,
 				7A24A27D24D6419800F621D3 /* Profile.swift in Sources */,
@@ -541,7 +553,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = TitianProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -564,7 +576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = TitianProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -8,19 +8,20 @@
 
 import SwiftUI
 import Swift
-import ConfettiView
 import UserNotifications
 
 struct MainPage: View {
-    
+
     //The class I use to keep water organized, I reference it with userWater.
     var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
     //WaterTotal is used as a binding concept to calculate user's water throughout the
-    @State var waterTotalDisplay: Int = 0
-    @State var lastWaterAdded: Int = 0
-    @State var showGoalView = false
-    @State var showFirstLaunch = false
-    @State var waterGoalNumber = 0
+    @State private var waterTotalDisplay: Int = 0
+    @State private var lastWaterAdded: Int = 0
+    @State private var showGoalView = false
+    @State private var showDonationView = false
+    @State private var showFirstLaunch = false
+    @State private var waterGoalNumber = 0
+
     
     //All the haptic feedback calls I use in the app.
     let impactMed = UIImpactFeedbackGenerator(style: .medium)
@@ -73,11 +74,11 @@ struct MainPage: View {
     
     func celebrationView(waterTotal:Int) -> some View {
         if waterTotal >= userWater.waterGoal {
-            ConfettiCelebrationView().isShowingConfetti = true
-            return ConfettiCelebrationView()
+            return ConfettiCelebrationView(isShowingConfetti: true)
         }
-        return ConfettiCelebrationView()
+        return ConfettiCelebrationView(isShowingConfetti: false)
     }
+    
     
     //This date check is responsible for resetting water goal every day
     func dateCheck() {
@@ -99,9 +100,8 @@ struct MainPage: View {
     
     
     var body: some View {
-        //celebrationView(waterTotal:userWater.dailyWater)
         ZStack {
-            celebrationView(waterTotal: waterTotalDisplay)
+            celebrationView(waterTotal: userWater.dailyWater)
             if showFirstLaunch == true {
                 withAnimation(Animation.easeIn) {
                     ZStack {
@@ -111,7 +111,7 @@ struct MainPage: View {
                     }) {
                         WelcomeScreen(waterGoalBinding: userWater.waterGoal)
                             .environmentObject(userWater)
-                        }
+                    }
                 }
             }
             HStack {
@@ -128,27 +128,37 @@ struct MainPage: View {
                                     .animation(.easeInOut)
                             }.sheet(isPresented: $showGoalView, onDismiss: {
                                 self.waterGoalNumber = userWater.waterGoal
+                                
                             }) {
                                 WaterGoalView(waterGoalBinding: userWater.waterGoal)
                                     .environmentObject(userWater)
                                }
                             }.padding()
-                            .animation(.spring())
+                            Spacer()
+                            Button(action: {
+                                self.showDonationView = true
+                            }){
+                                Text("👨🏽‍💻")
+                            }.sheet(isPresented: $showDonationView, content: {
+                                DonationView()
+                            })
                                 }
                     Spacer()
                     }
                     Spacer()
-            }.onAppear(
                 
-            )
+            }
                     
             //Add this later in future features
             //WaveBackgroundView()
             VStack {
-                Text("Water Today")
-                .underline()
-                    .font(.title)
-                    .fontWeight(.regular)
+                HStack {
+                    Text("Today")
+                    .underline()
+                        .font(.title)
+                        .fontWeight(.regular)
+                }
+                    //Add different font for title
                 userWater.dailyWaterDisplay()
                     .fontWeight(.medium)
                 
@@ -208,7 +218,7 @@ struct MainPage: View {
                                 impactLight.impactOccurred()
                                 minusOne()
                             }
-                        .onLongPressGesture(minimumDuration: 0.3){
+                        .onLongPressGesture(minimumDuration: 0.1){
                                 minusTen()
                                 impactHeavy.impactOccurred()
                             }
@@ -221,11 +231,11 @@ struct MainPage: View {
                             .frame(width: 60, height: 60)
                             .cornerRadius(20)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            .onTapGesture {
+                             .onTapGesture {
                                 impactLight.impactOccurred()
                                 addOne()
                             }
-                            .onLongPressGesture(minimumDuration: 0.3) {
+                            .onLongPressGesture(minimumDuration: 0.1) {
                                 addTen()
                                 impactHeavy.impactOccurred()
                                 }

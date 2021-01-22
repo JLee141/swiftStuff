@@ -12,12 +12,12 @@ struct Buttons: View {
     var body: some View {
         VStack {
             Text("+")
-                .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .font(.system(size: 40, weight: .semibold, design: .rounded))
                 .frame(width: 60, height: 60)
-                .background(Color.white)
+                //.background(Color.white)
             .cornerRadius(20)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .shadow(color: Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)), radius: 20, x: 20, y: 20)
+                .shadow(color: Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)), radius: 15, x: 0, y: 0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
