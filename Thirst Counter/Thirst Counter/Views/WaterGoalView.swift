@@ -36,18 +36,25 @@ struct WaterGoalView: View {
     @State var waterGoalBinding:Int = 0
     @State var input = NumbersOnly()
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+    
     var body: some View {
-        
         VStack {
+            Button(action: {
+                impactHeavy.impactOccurred()
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName:"chevron.compact.down")
+            }
+            
             Spacer()
             VStack {
-                Text("How much water would you like to drink today? 💧")
+                Text("How much liquid would you like to drink today? 💧")
                     .font(.title)
                     .padding()
             }
             HStack {
-                Spacer()
                 Text("Number Of OZ:")
+                    .font(.title3)
                     .italic()
                     .bold()
                     .padding()
@@ -55,11 +62,11 @@ struct WaterGoalView: View {
                 TextField("currently \(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
                     self.waterGoalBinding = Int(input.value)!
                 })
+                .font(.title2)
                 .keyboardType(.numberPad)
                 .multilineTextAlignment(.center)
                 .padding()
             }
-            
             Spacer()
             //Confirms binding for watergoal and dismisses this sheet
             Button(action: {
@@ -70,9 +77,8 @@ struct WaterGoalView: View {
                 } else {
                 self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
-                impactHeavy.impactOccurred()
+                    impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
-                
                 }
                 
             }) {

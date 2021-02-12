@@ -15,7 +15,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("Hello")
+                Text("Test")
                 Stepper(value: $number, in: 1...200) {
                     Text("Amount of OZ: \(number)")
                 }

@@ -3,12 +3,28 @@
 //  Thirst Counter
 //
 //  Created by Jordan Lee on 7/10/20.
-//  Copyright © 2020 Jordan Lee. All rights reserved.
+//  Copyright © 2021 Jordan Lee. All rights reserved.
 //
 
 import SwiftUI
 import Swift
 import UserNotifications
+
+//This checks events throughout the app including entering foreground
+class Observer: ObservableObject {
+    @Published var enteredForeground = true
+    init() {
+        if #available(iOS 14.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        }
+    }
+    //Function to toggle Forground state
+    @objc func willEnterForeground() {
+        enteredForeground.toggle()
+    }
+}
 
 struct MainPage: View {
 
@@ -21,15 +37,22 @@ struct MainPage: View {
     @State private var showDonationView = false
     @State private var showFirstLaunch = false
     @State private var waterGoalNumber = 0
+    @State public var goalComplete = false
+    @State private var goalCompleteCount = 0
+    private let goalCompleteCap = 1
+    @State private var scaleFactor: CGFloat = 1
 
     
     //All the haptic feedback calls I use in the app.
-    let impactMed = UIImpactFeedbackGenerator(style: .medium)
-    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-    let impactLight = UIImpactFeedbackGenerator(style: .light)
+    private let impactMed = UIImpactFeedbackGenerator(style: .medium)
+    private let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+    private let impactLight = UIImpactFeedbackGenerator(style: .light)
     
     //This key is true to find out the app has ran before. EXAMPLE: True is default for application, set false to reset run then next time change back.
-    var firstTimeLaunchKey = true
+    public var firstTimeLaunchKey = true
+    
+    //This observes app events, refer to class created on line
+    @ObservedObject var observer = Observer()
     
     //Todays Date, used to compare in Date function with old date
     @State var todaysDate = Date()
@@ -37,11 +60,23 @@ struct MainPage: View {
     //This formats the date so I can use it in my function.
     let dateFormatter = DateFormatter()
     
+    let notificationName = Notification.Name.NSCalendarDayChanged
     
+    // Register to receive notification
+//    NotificationCenter.default.addObserver(self, selector: #selector(calendarDayDidChange(notification:)), name: notificationName, object: nil)
+    
+//    func calendarDayDidChange(notification : NSNotification) {
+//        dateCheck()
+//    }
+    
+    
+    //Alert for easter egg 😎
+    @State private var easterEggZeroCount = 0
+    @State private var easterEggAlert = false
     
     //Alert Varible for my main page
     @State private var showingResetAlert = false
-    @State private var isShowingConfetti: Bool = false
+    //@State private var isShowingConfetti: Bool = false
     
     //This function checks to see if a user default key is in a place
     func isKeySetInUserDefaults(key: String) -> Bool {
@@ -71,19 +106,29 @@ struct MainPage: View {
     //End of Water Total Display functions
     
     
-    
-    func celebrationView(waterTotal:Int) -> some View {
-        if waterTotal >= userWater.waterGoal {
-            return ConfettiCelebrationView(isShowingConfetti: true)
+    func celebrationCheckView() {
+        //Checks for goal and activates goal complete \*/
+        //First Checks if dailywater is zero, if it is we don't need to run.
+        if self.userWater.dailyWater != 0 {
+            //Checks goal this is main condition
+            if self.userWater.dailyWater >= userWater.waterGoal {
+                //Checks cap, I don't want to continue after it ran once
+                if goalCompleteCap > goalCompleteCount {
+                    self.goalComplete.toggle()
+                    self.goalCompleteCount+=1
+                    }
+                }
+            }else{
+                self.goalCompleteCount = 0
+                self.goalComplete = false
         }
-        return ConfettiCelebrationView(isShowingConfetti: false)
     }
     
-    
+
     //This date check is responsible for resetting water goal every day
     func dateCheck() {
         todaysDate = Date()
-        dateFormatter.dateFormat = "MMddyyyy"
+        dateFormatter.dateFormat  = "MMddyyyy"
         let todaysDateInt = Int(dateFormatter.string(from: todaysDate))
         UserDefaults.standard.set(todaysDateInt,forKey: "todaysDate")
         let previousDateInt = UserDefaults.standard.integer(forKey: "oldDate")
@@ -95,13 +140,16 @@ struct MainPage: View {
         } else {
             UserDefaults.standard.set(todaysDateInt,forKey: "oldDate")
         }
+        celebrationCheckView()
     }
-    
-    
     
     var body: some View {
         ZStack {
-            celebrationView(waterTotal: userWater.dailyWater)
+            //if GoalComplete toggles then celebrationView pops
+            if self.goalComplete {
+                    ConfettiCelebrationView()
+                //goalCompleteCount = goalCompleteCap
+            }
             if showFirstLaunch == true {
                 withAnimation(Animation.easeIn) {
                     ZStack {
@@ -122,29 +170,33 @@ struct MainPage: View {
                                 .foregroundColor(.blue)
                             
                             Button(action: {
-                                self.showGoalView = true
+                                self.showGoalView.toggle()
                             }){
                                 Text("\(self.waterGoalNumber)")
                                     .animation(.easeInOut)
                             }.sheet(isPresented: $showGoalView, onDismiss: {
                                 self.waterGoalNumber = userWater.waterGoal
-                                
+                                celebrationCheckView()
                             }) {
                                 WaterGoalView(waterGoalBinding: userWater.waterGoal)
                                     .environmentObject(userWater)
                                }
-                            }.padding()
+                            }
+                            
                             Spacer()
                             Button(action: {
-                                self.showDonationView = true
+                                self.showDonationView.toggle()
                             }){
-                                Text("👨🏽‍💻")
+                                Image(systemName: "banknote")
                             }.sheet(isPresented: $showDonationView, content: {
                                 DonationView()
                             })
+                            
                                 }
+                    
                     Spacer()
                     }
+                .padding()
                     Spacer()
                 
             }
@@ -155,18 +207,20 @@ struct MainPage: View {
                 HStack {
                     Text("Today")
                     .underline()
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.regular)
                 }
                     //Add different font for title
                 userWater.dailyWaterDisplay()
+                    .font(.largeTitle)
                     .fontWeight(.medium)
                 
                 
                 HStack {
                     Button(action: {
                         self.userWater.resetWater()
-                        self.showingResetAlert = true
+                        celebrationCheckView()
+                        self.showingResetAlert.toggle()
                     }) {
                         Text("Reset")
                         .alert(isPresented: $showingResetAlert) {
@@ -182,8 +236,8 @@ struct MainPage: View {
                 
                 Button(action: {
                     impactLight.impactOccurred()
+                    dateCheck()
                     self.addToTotal(water: self.lastWaterAdded)
-                    
                 }) {
                     Text("Previous : \(self.lastWaterAdded) oz")
                         .font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 50)
@@ -194,31 +248,39 @@ struct MainPage: View {
                 Spacer()
                 Button(action: {
                     impactHeavy.impactOccurred()
+                    dateCheck()
                     self.userWater.recordWaterDaily(waterDisplay: self.waterTotalDisplay)
                     if self.waterTotalDisplay == 0{
+                        easterEggZeroCount = easterEggZeroCount+1
+                        if easterEggZeroCount > 3{
+                            
+                        }
                     }else{
                         self.lastWaterAdded = self.waterTotalDisplay
                         UserDefaults.standard.set(self.lastWaterAdded,forKey: "LastWaterAdded")
+                        self.waterTotalDisplay = 0
                     }
-                    self.waterTotalDisplay = 0
+                    celebrationCheckView()
+                    
                 }) {
-                    Text("Add").font(.largeTitle).background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)
+                    Text("Add").font(.largeTitle).background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 15)
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                 }
                 
+                //All the buttons
                 HStack {
                     Button(action: {
                     }) {
                         Image(systemName: "minus")
-                        .font(.system(size: 25, weight: .semibold, design: .rounded))
+                        .font(.system(size: 30, weight: .semibold, design: .rounded))
                         .frame(width: 60, height: 60)
                         .cornerRadius(20)
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .onTapGesture {
                                 impactLight.impactOccurred()
                                 minusOne()
-                            }
-                        .onLongPressGesture(minimumDuration: 0.1){
+                        }
+                            .onLongPressGesture(minimumDuration: 0){
                                 minusTen()
                                 impactHeavy.impactOccurred()
                             }
@@ -227,7 +289,7 @@ struct MainPage: View {
                     Button(action: {
                     }) {
                         Image(systemName: "plus")
-                            .font(.system(size: 25, weight: .semibold, design: .rounded))
+                            .font(.system(size: 30, weight: .semibold, design: .rounded))
                             .frame(width: 60, height: 60)
                             .cornerRadius(20)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
@@ -235,19 +297,21 @@ struct MainPage: View {
                                 impactLight.impactOccurred()
                                 addOne()
                             }
-                            .onLongPressGesture(minimumDuration: 0.1) {
+                            .onLongPressGesture(minimumDuration: 0) {
                                 addTen()
                                 impactHeavy.impactOccurred()
                                 }
-                        }
+                    }
                     }
             }
-        }.onAppear(perform:) {
+        }
+        .onAppear(perform:) {
             //This reflects the watergoal to the State Variable on the main page
             self.waterGoalNumber = userWater.waterGoal
             
             //Sets the proper date format for how dates are recorded in the app
             dateCheck()
+            
             self.lastWaterAdded = UserDefaults.standard.integer(forKey: "LastWaterAdded")
             
             //This controls the firsttime experience
@@ -255,7 +319,11 @@ struct MainPage: View {
                 self.showFirstLaunch = true
                 UserDefaults.standard.set(firstTimeLaunchKey, forKey: "FirstTimeLaunch")
             }
+            
         }
+        .onReceive(self.observer.$enteredForeground) { _ in
+                    dateCheck()
+                }
     }
 }
 struct ContentView_Previews: PreviewProvider {

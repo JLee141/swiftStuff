@@ -11,8 +11,8 @@
 		7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10CC58252535620086B1FA /* WaterGoalView.swift */; };
 		7A24A27D24D6419800F621D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A27C24D6419800F621D3 /* Profile.swift */; };
 		7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */; };
-		7A26B5AB25462EBF001C429C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7A26B5AA25462EBF001C429C /* Lottie */; };
 		7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E41DC25B0C5840067F39B /* DonationView.swift */; };
+		7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F576925BA1917006D1DC2 /* AboutMeView.swift */; };
 		7A6ABD4224E5A5FC0075E2C5 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */; };
 		7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFAE24B8E45900481EDC /* AppDelegate.swift */; };
 		7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB024B8E45900481EDC /* SceneDelegate.swift */; };
@@ -33,7 +33,6 @@
 		7ABB76B124CA322400B01B1D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB76B024CA322400B01B1D /* History.swift */; };
 		7ABE8735255606D900AF2D90 /* ConfettiCelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE8734255606D900AF2D90 /* ConfettiCelebrationView.swift */; };
 		7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF10F44251A8B1200A62C14 /* SettingsView.swift */; };
-		7AF9722324EA1EE200FCB30E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF9722224EA1EE200FCB30E /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +58,7 @@
 		7A24A27C24D6419800F621D3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackgroundView.swift; sourceTree = "<group>"; };
 		7A4E41DC25B0C5840067F39B /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		7A5F576925BA1917006D1DC2 /* AboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeView.swift; sourceTree = "<group>"; };
 		7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		7A73BFAB24B8E45900481EDC /* Thirst Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thirst Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A73BFAE24B8E45900481EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,9 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AF9722324EA1EE200FCB30E /* HealthKit.framework in Frameworks */,
 				7AACE30A253F4D520074D416 /* ConfettiView in Frameworks */,
-				7A26B5AB25462EBF001C429C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +195,7 @@
 				7A9413842593C5120010C3FF /* ButtonTest.swift */,
 				7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */,
 				7A4E41DC25B0C5840067F39B /* DonationView.swift */,
+				7A5F576925BA1917006D1DC2 /* AboutMeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,7 +235,6 @@
 			name = "Thirst Counter";
 			packageProductDependencies = (
 				7AACE309253F4D520074D416 /* ConfettiView */,
-				7A26B5AA25462EBF001C429C /* Lottie */,
 			);
 			productName = "Thirst Counter";
 			productReference = 7A73BFAB24B8E45900481EDC /* Thirst Counter.app */;
@@ -312,7 +310,6 @@
 			mainGroup = 7A73BFA224B8E45900481EDC;
 			packageReferences = (
 				7AACE308253F4D520074D416 /* XCRemoteSwiftPackageReference "ConfettiView" */,
-				7A26B5A925462EBF001C429C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 7A73BFAC24B8E45900481EDC /* Products */;
 			projectDirPath = "";
@@ -373,6 +370,7 @@
 				7A24A27D24D6419800F621D3 /* Profile.swift in Sources */,
 				7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */,
 				7A73BFB324B8E45900481EDC /* MainPage.swift in Sources */,
+				7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */,
 				7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */,
 				7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */,
 				7A76276F2562EF1100350C00 /* NotificationView.swift in Sources */,
@@ -473,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -528,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -543,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Thirst Counter/Thirst Counter.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Thirst Counter/Preview Content\"";
 				DEVELOPMENT_TEAM = TF32WF8CHS;
@@ -556,6 +555,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = TitianProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -590,6 +590,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TF32WF8CHS;
 				INFOPLIST_FILE = "Thirst CounterTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -611,6 +612,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TF32WF8CHS;
 				INFOPLIST_FILE = "Thirst CounterTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -708,14 +710,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7A26B5A925462EBF001C429C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.8;
-			};
-		};
 		7AACE308253F4D520074D416 /* XCRemoteSwiftPackageReference "ConfettiView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JLee141/ConfettiView";
@@ -727,11 +721,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7A26B5AA25462EBF001C429C /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7A26B5A925462EBF001C429C /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
 		7AACE309253F4D520074D416 /* ConfettiView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7AACE308253F4D520074D416 /* XCRemoteSwiftPackageReference "ConfettiView" */;

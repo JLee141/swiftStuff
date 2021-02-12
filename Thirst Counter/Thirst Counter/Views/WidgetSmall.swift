@@ -9,8 +9,23 @@
 import SwiftUI
 
 struct WidgetSmall: View {
+    //10 seconds countdown
+    @State private var timeRemaining = 10
+    @State private var isActive = true
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    @EnvironmentObject var userWater: Liquid
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            Text("The time remaining is: \(timeRemaining)")
+            
+        }.onReceive(timer) { _ in
+            if self.timeRemaining > 0 {
+                timeRemaining-=1
+            }
+        }
     }
 }
 

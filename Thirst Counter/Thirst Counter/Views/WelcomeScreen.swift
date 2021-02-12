@@ -17,6 +17,12 @@ struct WelcomeScreen: View {
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     var body: some View {
         VStack {
+            Button(action: {
+                impactHeavy.impactOccurred()
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName:"chevron.compact.down")
+            }
             Spacer()
         Text("Hello! Welcome to thirst counter!💧")
             .font(.title)
@@ -35,12 +41,12 @@ struct WelcomeScreen: View {
                 if Int(input.value) == nil {
                 impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
-                }else {
+                }else{
                 self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
                 impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
-                }
+                    }
             }, label: {
                 Text("Confirm")
                  .background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)

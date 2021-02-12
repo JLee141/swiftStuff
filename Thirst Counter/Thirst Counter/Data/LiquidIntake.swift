@@ -31,6 +31,7 @@ class Liquid: ObservableObject {
     
     //let calendar = Calendar.current
 
+    //Initilizer, organizes all the data into the right spots.
     init(Water: Int,UnitMeasurement: String, WaterGoal: Int,SecondLaunch: Bool) {
         self.dailyWater = Water
         self.userName = ""
@@ -43,26 +44,24 @@ class Liquid: ObservableObject {
     //This displays the TOTAL water for the day and color coats it based on completion.
     func dailyWaterDisplay() -> Text {
         let waterString = "\(self.dailyWater)"
-        if dailyWater == 0 {
+        if dailyWater < waterGoal/2 {
             return Text("\(waterString) \(unitMeasurement)")
                 .font(.largeTitle)
                 .foregroundColor(Color.red)
-        }else if dailyWater <= waterGoal/4 {
-        return Text("\(waterString) \(unitMeasurement)")
-                .font(.largeTitle)
-                .foregroundColor(Color.red)
-        }else if dailyWater <= waterGoal/3 {
-        return Text("\(waterString) \(unitMeasurement)")
-                .font(.largeTitle)
-            .foregroundColor(Color.yellow)
-        }else if dailyWater >= waterGoal {
+        }else if dailyWater >= waterGoal/2 {
+            if dailyWater >= waterGoal {
             return Text("\(waterString) \(unitMeasurement)")
-                    .font(.largeTitle)
-                    .foregroundColor(Color.green)
+                        .font(.largeTitle)
+                        .foregroundColor(Color.green)
+            }else{
+            return Text("\(waterString) \(unitMeasurement)")
+                        .font(.largeTitle)
+                    .foregroundColor(Color.yellow)
+            }
         }
         return Text("\(waterString) \(unitMeasurement)")
             .font(.largeTitle)
-            .foregroundColor(Color.yellow)
+            //.foregroundColor(Color.yellow)
     }
     
     //Adds +1 to the water displayed.
@@ -74,16 +73,21 @@ class Liquid: ObservableObject {
     func minusOne(displayWater: Int) {
         self.dailyWater = displayWater-1
     }
-    func waterGoalDisplay() -> Text {
-        return Text("\(self.waterGoal)")
-    }
-    func waterGoalDisplay(waterGoalView: Bool) -> Text {
-        let waterGoalString = "\(self.waterGoal)"
-        return Text("\(waterGoalString)")
-    }
+    
+//    //Displays watergoal as a text
+//    func waterGoalDisplay() -> Text {
+//        return Text("\(self.waterGoal)")
+//    }
+//    
+//    func waterGoalDisplay(waterGoalView: Bool) -> Text {
+//        let waterGoalString = "\(self.waterGoal)"
+//        return Text("\(waterGoalString)")
+//    }
+    
     func plusOneWaterGoal(displayWater: Int) {
         self.waterGoal = displayWater+1
     }
+    
     func minusOneWaterGoal(displayWater: Int) {
         self.waterGoal = displayWater+1
     }
@@ -121,3 +125,4 @@ class Liquid: ObservableObject {
 class waterRecord: ObservableObject {
     
 }
+

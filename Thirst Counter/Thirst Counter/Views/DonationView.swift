@@ -14,11 +14,20 @@ struct DonationView: View {
 
 //Haptic feedback when button is pressed to dismiss
 let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+let impactMedium = UIImpactFeedbackGenerator(style: .medium)
     var body: some View {
         VStack {
-            Spacer()
-                .padding(.top)
-            Text("Tip Jar! 👋🏼")
+            Button(action: {
+                impactHeavy.impactOccurred()
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName:"chevron.compact.down")
+            }
+            HStack {
+                Spacer()
+                    .padding(.top)
+            }
+            Text("Help me help you! 😁")
                 .font(.title)
             Spacer()
             Text("")
@@ -35,8 +44,8 @@ let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
                     impactHeavy.impactOccurred()
                     self.presentationMode.wrappedValue.dismiss()
                 }){
-                Text("Courteous Level 1️⃣")
-                .font(.title3)
+                Text("Courteous Level : 1️⃣ Dollar")
+                .font(.title2)
                 }
                 Spacer()
             }
@@ -47,8 +56,8 @@ let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
                     impactHeavy.impactOccurred()
                     self.presentationMode.wrappedValue.dismiss()
                 }){
-                    Text("Kind Level 5️⃣")
-                    .font(.title3)
+                    Text("Kind Level :  5️⃣ Dollars")
+                    .font(.title2)
                 }
                 Spacer()
             }
@@ -59,16 +68,27 @@ let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
                     impactHeavy.impactOccurred()
                     self.presentationMode.wrappedValue.dismiss()
                 }){
-                    Text("Generous Level 🔟")
-                    .font(.title3)
+                    Text("Generous Level : 🔟 Dollars")
+                    .font(.title2)
                 }
                 Spacer()
             }
             .padding()
                 Spacer()
+                HStack {
+                    Button(action: {
+                        impactMedium.impactOccurred()
+                        self.presentationMode.wrappedValue.dismiss()
+                    }){
+                        Text("Not Right Now").font(.title3).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
+                            .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+                        
+                    }
+                }
+                .padding()
             }
             Spacer()
-        }
+        }.padding()
     }
 }
 
