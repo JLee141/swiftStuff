@@ -22,14 +22,9 @@ let impactMedium = UIImpactFeedbackGenerator(style: .medium)
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image(systemName:"chevron.compact.down")
-            }
-            HStack {
-                Spacer()
-                    .padding(.top)
-            }
+            }.padding()
             Text("Help me help you! 😁")
                 .font(.title)
-            Spacer()
             Text("")
             Text("Thank you for using my app! I hope it brings value into your life. I invite you to support me if you can. I intend to keep this app free to help people reach their goals 😊")
                 .font(.title2)
@@ -82,6 +77,7 @@ let impactMedium = UIImpactFeedbackGenerator(style: .medium)
                     }){
                         Text("Not Right Now").font(.title3).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
                             .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+                            
                         
                     }
                 }

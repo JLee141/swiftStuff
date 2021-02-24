@@ -7,16 +7,43 @@
 //
 
 import SwiftUI
-var textList = ["This", "is", "A", "test", "list"]
+let textList = ["This", "is", "A", "test", "list"]
+let nameList = ["Jordan","Cal","Nick","Danielle","Robert","Ariel","Camilo"]
+let liquidList = ["Water","Coffee"]
+
 struct ContentView: View {
+    @State var displayWord = "Select A Word"
+    @State var displayNumber = 0
+    var wordSelect = ""
+    @State var button = false
+    
     var body: some View {
-        VStack(a)
-        Text("Welcome to Thirst Counter!")
-    }
+        VStack {
+            Text("Liquids")
+                .font(.title)
+            Spacer()
+            
+            HStack {
+                
+                Spacer()
+                ForEach(0..<2) { _ in
+                    Button(action: {
+                        
+                    }){
+                        RoundedRectangle(cornerRadius: 40)
+                            .size(width: 140, height: 140)
+                            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+                            .padding()
+                    }
+                }
+            }
+}
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
+        }
     }
 }

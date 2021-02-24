@@ -11,7 +11,7 @@ import Combine
 private var repeatingAnimation: Animation {
     Animation
         .easeInOut
-        .speed(100)
+        .speed(1000)
         .repeatForever()
 }
 struct Wave: Shape {
@@ -45,16 +45,53 @@ struct Wave: Shape {
 }
 
 struct WaveBackgroundView: View {
+    @State var increaseSize = 1
+    @State var decreaseSize = 1
+    
+    @Namespace private var animation
+    
     var waveBackground1 = Wave(graphWidth: 1, amplitude: 0.05)
+
     var waveBackground2 = Wave(graphWidth: 1, amplitude: 0.05)
     
     var body: some View {
+        
         VStack {
             ZStack {
+                HStack {
+                    
+                    Button(action: {
+                        decreaseSize+=2
+                        if 2 > increaseSize {
+                            increaseSize-=2
+                        }
+                        
+                    }){
+                        Text("Increase!")
+                    }
+                    
+                    Button(action: {
+                        increaseSize+=2
+                        if 2 > decreaseSize {
+                            decreaseSize-=2
+                        }
+                    }){
+                        Text("Decrease!")
+                    }
+                }
+
                 waveBackground1
-                    .offset(x: 0, y: 20)
+                    .offset(x: 0, y: CGFloat(40*increaseSize))
+                    .opacity(0.2)
+                    //.animation(repeatingAnimation)
+                    .matchedGeometryEffect(id: "wave", in: animation)
+                
                 waveBackground2
-                    .offset(x: 0, y: 20)
+                    .offset(x: 0, y: CGFloat(60*increaseSize))
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    //.animation(repeatingAnimation)
+                    .matchedGeometryEffect(id: "wave", in: animation)
+                
             }
         }
     }
@@ -62,6 +99,6 @@ struct WaveBackgroundView: View {
 
 struct WaveBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        WaveBackgroundView().animation(repeatingAnimation)
+        WaveBackgroundView()
     }
 }

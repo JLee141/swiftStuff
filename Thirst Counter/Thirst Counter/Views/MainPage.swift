@@ -30,6 +30,7 @@ struct MainPage: View {
 
     //The class I use to keep water organized, I reference it with userWater.
     var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
+    
     //WaterTotal is used as a binding concept to calculate user's water throughout the
     @State private var waterTotalDisplay: Int = 0
     @State private var lastWaterAdded: Int = 0
@@ -41,6 +42,10 @@ struct MainPage: View {
     @State private var goalCompleteCount = 0
     private let goalCompleteCap = 1
     @State private var scaleFactor: CGFloat = 1
+    
+    //Both of these are used for animations
+    @State var viewState = CGSize.zero
+    @Namespace private var animation
 
     
     //All the haptic feedback calls I use in the app.
@@ -105,7 +110,7 @@ struct MainPage: View {
     }
     //End of Water Total Display functions
     
-    
+    //Checks Celebration and runs a goal complete @State toggle
     func celebrationCheckView() {
         //Checks for goal and activates goal complete \*/
         //First Checks if dailywater is zero, if it is we don't need to run.
@@ -148,6 +153,7 @@ struct MainPage: View {
             //if GoalComplete toggles then celebrationView pops
             if self.goalComplete {
                     ConfettiCelebrationView()
+                        
                 //goalCompleteCount = goalCompleteCap
             }
             if showFirstLaunch == true {
@@ -276,11 +282,13 @@ struct MainPage: View {
                         .frame(width: 60, height: 60)
                         .cornerRadius(20)
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        //Tap for minusOne
                         .onTapGesture {
                                 impactLight.impactOccurred()
                                 minusOne()
                         }
-                            .onLongPressGesture(minimumDuration: 0){
+                        //Longpress for Minus 10
+                        .onLongPressGesture(minimumDuration: 0){
                                 minusTen()
                                 impactHeavy.impactOccurred()
                             }
@@ -323,7 +331,7 @@ struct MainPage: View {
         }
         .onReceive(self.observer.$enteredForeground) { _ in
                     dateCheck()
-                }
+        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
