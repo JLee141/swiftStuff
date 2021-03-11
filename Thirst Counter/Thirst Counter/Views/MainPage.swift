@@ -29,7 +29,7 @@ class Observer: ObservableObject {
 struct MainPage: View {
 
     //The class I use to keep water organized, I reference it with userWater.
-    var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
+    @State var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
     
     //WaterTotal is used as a binding concept to calculate user's water throughout the
     @State private var waterTotalDisplay: Int = 0
@@ -42,6 +42,15 @@ struct MainPage: View {
     @State private var goalCompleteCount = 0
     private let goalCompleteCap = 1
     @State private var scaleFactor: CGFloat = 1
+    
+    //List of available measurements
+    @State var unitMeasurements = ["oz","cups"]
+    @State var unitMeasurement:String = "oz"
+    @State var pickerExpand = false
+    
+    
+    //Controls drag views
+    @State var drag = DragGesture()
     
     //Both of these are used for animations
     @State var viewState = CGSize.zero
@@ -216,11 +225,44 @@ struct MainPage: View {
                         .font(.largeTitle)
                         .fontWeight(.regular)
                 }
-                    //Add different font for title
+                //Button due to picker but testing out ways to change oz
+                /*
+                Button(action: {
+                    self.pickerExpand.toggle()
+                }, label: {
+                    userWater.dailyWaterDisplay()
+                        .font(.largeTitle)
+                        .fontWeight(.medium)
+                })
+                if pickerExpand {
+                    Picker("", selection: $unitMeasurement) {
+                        ForEach(0..<unitMeasurements.count) {
+                            Text("\(self.unitMeasurements[$0])")
+                        }
+                    }.labelsHidden()
+                    .overlay(
+                        GeometryReader { gp in
+                            VStack {
+                                Button(action: {
+                                    self.pickerExpand.toggle()
+                                }) {
+                                    Text("Done")
+                                        .font(.system(size: 42))
+                                        .foregroundColor(.red)
+                                        .padding(.vertical)
+                                        .frame(width: gp.size.width)
+                                }.background(Color.white)
+                                Spacer()
+                            }
+                            .frame(width: gp.size.width, height: gp.size.height - 12)
+                            .border(Color.black, width: 8)
+                        }
+                    )
+                }
+                */
                 userWater.dailyWaterDisplay()
                     .font(.largeTitle)
                     .fontWeight(.medium)
-                
                 
                 HStack {
                     Button(action: {
@@ -310,7 +352,7 @@ struct MainPage: View {
                                 impactHeavy.impactOccurred()
                                 }
                     }
-                    }
+                }
             }
         }
         .onAppear(perform:) {
@@ -332,9 +374,10 @@ struct MainPage: View {
         .onReceive(self.observer.$enteredForeground) { _ in
                     dateCheck()
         }
+        .gesture(DragGesture(minimumDistance: 30, coordinateSpace: .local))
     }
 }
-struct ContentView_Previews: PreviewProvider {
+struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
         MainPage()
     }

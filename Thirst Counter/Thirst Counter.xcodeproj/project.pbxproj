@@ -13,10 +13,13 @@
 		7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */; };
 		7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E41DC25B0C5840067F39B /* DonationView.swift */; };
 		7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F576925BA1917006D1DC2 /* AboutMeView.swift */; };
+		7A622B7325F8752900C755B1 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A622B7225F8752900C755B1 /* MainPage.swift */; };
+		7A622B7525F8754C00C755B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A622B7425F8754C00C755B1 /* ContentView.swift */; };
+		7A622B7925F9172B00C755B1 /* LiquidChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A622B7825F9172B00C755B1 /* LiquidChooseView.swift */; };
+		7A64B23B25F1755D0020B3D6 /* CreditsAndThanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64B23A25F1755D0020B3D6 /* CreditsAndThanks.swift */; };
 		7A6ABD4224E5A5FC0075E2C5 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */; };
 		7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFAE24B8E45900481EDC /* AppDelegate.swift */; };
 		7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB024B8E45900481EDC /* SceneDelegate.swift */; };
-		7A73BFB324B8E45900481EDC /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFB224B8E45900481EDC /* MainPage.swift */; };
 		7A73BFB524B8E45A00481EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB424B8E45A00481EDC /* Assets.xcassets */; };
 		7A73BFB824B8E45A00481EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB724B8E45A00481EDC /* Preview Assets.xcassets */; };
 		7A73BFBB24B8E45A00481EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A73BFB924B8E45A00481EDC /* LaunchScreen.storyboard */; };
@@ -32,6 +35,7 @@
 		7ABB76AF24CA28ED00B01B1D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */; };
 		7ABB76B124CA322400B01B1D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB76B024CA322400B01B1D /* History.swift */; };
 		7ABE8735255606D900AF2D90 /* ConfettiCelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE8734255606D900AF2D90 /* ConfettiCelebrationView.swift */; };
+		7AD40B0525F8595300B36C50 /* iPages in Frameworks */ = {isa = PBXBuildFile; productRef = 7AD40B0425F8595300B36C50 /* iPages */; };
 		7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF10F44251A8B1200A62C14 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,11 +63,14 @@
 		7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackgroundView.swift; sourceTree = "<group>"; };
 		7A4E41DC25B0C5840067F39B /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		7A5F576925BA1917006D1DC2 /* AboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeView.swift; sourceTree = "<group>"; };
+		7A622B7225F8752900C755B1 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		7A622B7425F8754C00C755B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A622B7825F9172B00C755B1 /* LiquidChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidChooseView.swift; sourceTree = "<group>"; };
+		7A64B23A25F1755D0020B3D6 /* CreditsAndThanks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsAndThanks.swift; sourceTree = "<group>"; };
 		7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		7A73BFAB24B8E45900481EDC /* Thirst Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thirst Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A73BFAE24B8E45900481EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A73BFB024B8E45900481EDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7A73BFB224B8E45900481EDC /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		7A73BFB424B8E45A00481EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A73BFB724B8E45A00481EDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7A73BFBA24B8E45A00481EDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AACE30A253F4D520074D416 /* ConfettiView in Frameworks */,
+				7AD40B0525F8595300B36C50 /* iPages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +157,6 @@
 				7A73BFB624B8E45A00481EDC /* Preview Content */,
 				7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */,
 				7A24A27C24D6419800F621D3 /* Profile.swift */,
-				7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */,
 				7A77FF2824EF52DD00747557 /* ViewStyles.swift */,
 			);
 			path = "Thirst Counter";
@@ -184,8 +191,10 @@
 		7A9DD71C24F6FCC6002A3288 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A622B7225F8752900C755B1 /* MainPage.swift */,
+				7A622B7425F8754C00C755B1 /* ContentView.swift */,
+				7A6ABD4124E5A5FB0075E2C5 /* Buttons.swift */,
 				7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */,
-				7A73BFB224B8E45900481EDC /* MainPage.swift */,
 				7ABB76B024CA322400B01B1D /* History.swift */,
 				7AF10F44251A8B1200A62C14 /* SettingsView.swift */,
 				7A10CC58252535620086B1FA /* WaterGoalView.swift */,
@@ -196,6 +205,8 @@
 				7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */,
 				7A4E41DC25B0C5840067F39B /* DonationView.swift */,
 				7A5F576925BA1917006D1DC2 /* AboutMeView.swift */,
+				7A64B23A25F1755D0020B3D6 /* CreditsAndThanks.swift */,
+				7A622B7825F9172B00C755B1 /* LiquidChooseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 			name = "Thirst Counter";
 			packageProductDependencies = (
 				7AACE309253F4D520074D416 /* ConfettiView */,
+				7AD40B0425F8595300B36C50 /* iPages */,
 			);
 			productName = "Thirst Counter";
 			productReference = 7A73BFAB24B8E45900481EDC /* Thirst Counter.app */;
@@ -310,6 +322,7 @@
 			mainGroup = 7A73BFA224B8E45900481EDC;
 			packageReferences = (
 				7AACE308253F4D520074D416 /* XCRemoteSwiftPackageReference "ConfettiView" */,
+				7AD40B0325F8595300B36C50 /* XCRemoteSwiftPackageReference "iPages" */,
 			);
 			productRefGroup = 7A73BFAC24B8E45900481EDC /* Products */;
 			projectDirPath = "";
@@ -357,19 +370,22 @@
 			files = (
 				7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */,
 				7A77FF2924EF52DD00747557 /* ViewStyles.swift in Sources */,
+				7A622B7525F8754C00C755B1 /* ContentView.swift in Sources */,
 				7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */,
 				7AA5B73225A3CD1A00235F47 /* WidgetSmall.swift in Sources */,
 				7A6ABD4224E5A5FC0075E2C5 /* Buttons.swift in Sources */,
+				7A622B7325F8752900C755B1 /* MainPage.swift in Sources */,
 				7ABB76B124CA322400B01B1D /* History.swift in Sources */,
 				7A8595E62548DBEF007574D0 /* WelcomeScreen.swift in Sources */,
 				7ABE8735255606D900AF2D90 /* ConfettiCelebrationView.swift in Sources */,
 				7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */,
 				7A9413852593C5120010C3FF /* ButtonTest.swift in Sources */,
 				7A73BFAF24B8E45900481EDC /* AppDelegate.swift in Sources */,
+				7A64B23B25F1755D0020B3D6 /* CreditsAndThanks.swift in Sources */,
 				7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */,
+				7A622B7925F9172B00C755B1 /* LiquidChooseView.swift in Sources */,
 				7A24A27D24D6419800F621D3 /* Profile.swift in Sources */,
 				7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */,
-				7A73BFB324B8E45900481EDC /* MainPage.swift in Sources */,
 				7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */,
 				7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */,
 				7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */,
@@ -718,6 +734,14 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		7AD40B0325F8595300B36C50 /* XCRemoteSwiftPackageReference "iPages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iPages.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.13;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -725,6 +749,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7AACE308253F4D520074D416 /* XCRemoteSwiftPackageReference "ConfettiView" */;
 			productName = ConfettiView;
+		};
+		7AD40B0425F8595300B36C50 /* iPages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AD40B0325F8595300B36C50 /* XCRemoteSwiftPackageReference "iPages" */;
+			productName = iPages;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

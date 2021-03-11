@@ -16,6 +16,7 @@ struct ContentView: View {
     @State var displayNumber = 0
     var wordSelect = ""
     @State var button = false
+    @State var activateView = false
     
     var body: some View {
         VStack {
@@ -24,11 +25,10 @@ struct ContentView: View {
             Spacer()
             
             HStack {
-                
                 Spacer()
                 ForEach(0..<2) { _ in
                     Button(action: {
-                        
+                        activateView.toggle()
                     }){
                         RoundedRectangle(cornerRadius: 40)
                             .size(width: 140, height: 140)

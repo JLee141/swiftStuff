@@ -20,6 +20,8 @@ struct MapView: UIViewRepresentable {
         let region = MKCoordinateRegion(center: coordinate, span: span)
         uiView.setRegion(region, animated: true)
     }
+    
+    
  
 }
 

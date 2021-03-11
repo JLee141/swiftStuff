@@ -22,14 +22,10 @@ class Liquid: ObservableObject {
     
     @State private var congratsViewAlert = false
     @Published var waterGoal: Int
-    var unitMeasurement: String
+    @State var unitMeasurement: String
+    @State var unitMeasurements = ["oz","cups"]
     @State var secondLaunch: Bool
-    
-    //This is to create a reference date so that water can reset everyday
-    var currentDate = Date()
-    var previousDate = Date()
-    
-    //let calendar = Calendar.current
+
 
     //Initilizer, organizes all the data into the right spots.
     init(Water: Int,UnitMeasurement: String, WaterGoal: Int,SecondLaunch: Bool) {
@@ -63,6 +59,8 @@ class Liquid: ObservableObject {
             .font(.largeTitle)
             //.foregroundColor(Color.yellow)
     }
+    
+    
     
     //Adds +1 to the water displayed.
     func plusOne(displayWater: Int) {
