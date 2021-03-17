@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-//This is for the
+//This is to format numbers so that field only takes an actual numbers, usable throughout the project.
 class NumbersOnly: ObservableObject {
     @State private var showingAlert = false
     @Published var value = "" {
@@ -32,7 +32,7 @@ struct WaterGoalView: View {
     @Environment(\.presentationMode) var presentationMode
     //@State private var showingAlert = false
 
-    @EnvironmentObject var userWater: Liquid
+    @EnvironmentObject var userWater: LiquidModel
     @State var waterGoalBinding:Int = 0
     @State var input = NumbersOnly()
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)

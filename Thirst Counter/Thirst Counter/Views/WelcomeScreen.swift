@@ -11,7 +11,7 @@ import SwiftUI
 struct WelcomeScreen: View {
     @State private var input = NumbersOnly()
     @State private var textFieldBinding: String = ""
-    @EnvironmentObject var userWater: Liquid
+    @EnvironmentObject var userWater: LiquidModel
     @State var waterGoalBinding:Int = 0
     @Environment(\.presentationMode) var presentationMode
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)

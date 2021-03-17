@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */; };
+		7A00913B24BFA9EB00BCB36A /* LiquidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A00913A24BFA9EB00BCB36A /* LiquidModel.swift */; };
 		7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10CC58252535620086B1FA /* WaterGoalView.swift */; };
 		7A24A27D24D6419800F621D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A27C24D6419800F621D3 /* Profile.swift */; };
 		7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */; };
@@ -57,7 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidIntake.swift; sourceTree = "<group>"; };
+		7A00913A24BFA9EB00BCB36A /* LiquidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidModel.swift; sourceTree = "<group>"; };
 		7A10CC58252535620086B1FA /* WaterGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalView.swift; sourceTree = "<group>"; };
 		7A24A27C24D6419800F621D3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackgroundView.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		7A9DD71D24F7189B002A3288 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7A00913A24BFA9EB00BCB36A /* LiquidIntake.swift */,
+				7A00913A24BFA9EB00BCB36A /* LiquidModel.swift */,
 				7A73BFDE24B9A58E00481EDC /* dataFile.swift */,
 			);
 			path = Data;
@@ -385,7 +385,7 @@
 				7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */,
 				7A622B7925F9172B00C755B1 /* LiquidChooseView.swift in Sources */,
 				7A24A27D24D6419800F621D3 /* Profile.swift in Sources */,
-				7A00913B24BFA9EB00BCB36A /* LiquidIntake.swift in Sources */,
+				7A00913B24BFA9EB00BCB36A /* LiquidModel.swift in Sources */,
 				7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */,
 				7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */,
 				7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */,

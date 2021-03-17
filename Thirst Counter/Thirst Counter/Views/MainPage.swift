@@ -10,26 +10,10 @@ import SwiftUI
 import Swift
 import UserNotifications
 
-//This checks events throughout the app including entering foreground
-class Observer: ObservableObject {
-    @Published var enteredForeground = true
-    init() {
-        if #available(iOS 14.0, *) {
-            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
-        } else {
-            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        }
-    }
-    //Function to toggle Forground state
-    @objc func willEnterForeground() {
-        enteredForeground.toggle()
-    }
-}
-
 struct MainPage: View {
 
     //The class I use to keep water organized, I reference it with userWater.
-    @State var userWater = Liquid(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
+    @State var userWater = LiquidModel(Water: UserDefaults.standard.integer(forKey: "Water"), UnitMeasurement: "oz",WaterGoal: UserDefaults.standard.integer(forKey: "WaterGoal"), SecondLaunch: UserDefaults.standard.bool(forKey: "SecondLaunch"))
     
     //WaterTotal is used as a binding concept to calculate user's water throughout the
     @State private var waterTotalDisplay: Int = 0
@@ -66,7 +50,7 @@ struct MainPage: View {
     public var firstTimeLaunchKey = true
     
     //This observes app events, refer to class created on line
-    @ObservedObject var observer = Observer()
+    @State var observer = Observer()
     
     //Todays Date, used to compare in Date function with old date
     @State var todaysDate = Date()

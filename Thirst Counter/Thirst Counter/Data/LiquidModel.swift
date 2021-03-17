@@ -9,8 +9,23 @@
 import Foundation
 import SwiftUI
 import Swift
+//This checks events throughout the app including entering foreground
+class Observer: ObservableObject {
+    @Published var enteredForeground = true
+    init() {
+        if #available(iOS 14.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        }
+    }
+    //Function to toggle Forground state
+    @objc func willEnterForeground() {
+        enteredForeground.toggle()
+    }
+}
 
-class Liquid: ObservableObject {
+class LiquidModel: ObservableObject {
     //This is requirement for inheriting Identifiable class
     //var id:String = UUID().uuidString
     var userName: String
@@ -25,6 +40,8 @@ class Liquid: ObservableObject {
     @State var unitMeasurement: String
     @State var unitMeasurements = ["oz","cups"]
     @State var secondLaunch: Bool
+    
+    
 
 
     //Initilizer, organizes all the data into the right spots.
@@ -101,11 +118,14 @@ class Liquid: ObservableObject {
 //
 //        UserDefaults.standard.set(self.lastWaterAdded, forKey: "LastWaterAdded")
 //    }
+    
     //Resets total water daily to 0 for a forced reset.
     func resetWater() {
         self.dailyWater = 0
         UserDefaults.standard.set(self.dailyWater, forKey: "Water")
     }
+    
+    
     //Set's watergoal and saves it in the userkey
     func recordWaterGoal(waterGoal: Int) {
         self.waterGoal = waterGoal

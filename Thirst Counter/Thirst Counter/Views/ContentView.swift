@@ -11,7 +11,7 @@ import iPages
 
 struct ContentView: View {
     @State var currentPage: Int = 0
-    @EnvironmentObject var userWater: Liquid
+    @EnvironmentObject var userWater: LiquidModel
     
     var body: some View {
         iPages {

@@ -15,6 +15,9 @@ struct DonationView: View {
 //Haptic feedback when button is pressed to dismiss
 let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
 let impactMedium = UIImpactFeedbackGenerator(style: .medium)
+    
+@State var input = NumbersOnly()
+    
     var body: some View {
         VStack {
             Button(action: {
@@ -91,6 +94,20 @@ let impactMedium = UIImpactFeedbackGenerator(style: .medium)
                     }
                     .padding()
                     }
+                    
+                HStack {
+                    Button(action: {
+                        impactHeavy.impactOccurred()
+                        self.presentationMode.wrappedValue.dismiss()
+                    }){
+                        TextField("Enter Value You Want", text: $input.value)
+                            .keyboardType(.numberPad)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                            .font(.title3)
+                    }
+                    
+                }
                 }
             }
             

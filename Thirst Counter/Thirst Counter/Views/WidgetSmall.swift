@@ -15,7 +15,7 @@ struct WidgetSmall: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    @EnvironmentObject var userWater: Liquid
+    @EnvironmentObject var userWater: LiquidModel
     var body: some View {
         
         VStack {

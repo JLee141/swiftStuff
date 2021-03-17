@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Profile: Liquid {
+class Profile: LiquidModel {
 
 }

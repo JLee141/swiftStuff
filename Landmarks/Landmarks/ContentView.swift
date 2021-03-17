@@ -21,11 +21,22 @@ struct ContentView: View {
         
             VStack(alignment: .leading) {
             Text("Turtle Rock").font(.title)
+                
+                
             HStack {
                 Text("Joshua Tree National Park").font(.subheadline)
                 Spacer()
                 Text("California").font(.subheadline)
                 }
+                
+            Divider()
+                
+            
+            Text("About Turtle Rock")
+                .font(.title2)
+            
+            Text("Descriptive text goes here")
+                
             }
             .padding()
             
