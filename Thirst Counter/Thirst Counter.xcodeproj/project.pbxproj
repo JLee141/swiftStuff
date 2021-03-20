@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7A00913B24BFA9EB00BCB36A /* LiquidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A00913A24BFA9EB00BCB36A /* LiquidModel.swift */; };
 		7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10CC58252535620086B1FA /* WaterGoalView.swift */; };
-		7A24A27D24D6419800F621D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A27C24D6419800F621D3 /* Profile.swift */; };
 		7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */; };
 		7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E41DC25B0C5840067F39B /* DonationView.swift */; };
 		7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F576925BA1917006D1DC2 /* AboutMeView.swift */; };
@@ -27,7 +26,6 @@
 		7A73BFD124B8E45A00481EDC /* Thirst_CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFD024B8E45A00481EDC /* Thirst_CounterUITests.swift */; };
 		7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73BFDE24B9A58E00481EDC /* dataFile.swift */; };
 		7A76276F2562EF1100350C00 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76276E2562EF1100350C00 /* NotificationView.swift */; };
-		7A77FF2924EF52DD00747557 /* ViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77FF2824EF52DD00747557 /* ViewStyles.swift */; };
 		7A8595E62548DBEF007574D0 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8595E52548DBEF007574D0 /* WelcomeScreen.swift */; };
 		7A9413852593C5120010C3FF /* ButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9413842593C5120010C3FF /* ButtonTest.swift */; };
 		7AA5B73225A3CD1A00235F47 /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */; };
@@ -36,6 +34,7 @@
 		7ABB76B124CA322400B01B1D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB76B024CA322400B01B1D /* History.swift */; };
 		7ABE8735255606D900AF2D90 /* ConfettiCelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE8734255606D900AF2D90 /* ConfettiCelebrationView.swift */; };
 		7AD40B0525F8595300B36C50 /* iPages in Frameworks */ = {isa = PBXBuildFile; productRef = 7AD40B0425F8595300B36C50 /* iPages */; };
+		7AE6C12F260541A600B026B4 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 7AE6C12E260541A600B026B4 /* Neumorphic */; };
 		7AF10F45251A8B1200A62C14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF10F44251A8B1200A62C14 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +58,6 @@
 /* Begin PBXFileReference section */
 		7A00913A24BFA9EB00BCB36A /* LiquidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidModel.swift; sourceTree = "<group>"; };
 		7A10CC58252535620086B1FA /* WaterGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalView.swift; sourceTree = "<group>"; };
-		7A24A27C24D6419800F621D3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackgroundView.swift; sourceTree = "<group>"; };
 		7A4E41DC25B0C5840067F39B /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		7A5F576925BA1917006D1DC2 /* AboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeView.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 		7A73BFD224B8E45A00481EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A73BFDE24B9A58E00481EDC /* dataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataFile.swift; sourceTree = "<group>"; };
 		7A76276E2562EF1100350C00 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		7A77FF2824EF52DD00747557 /* ViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyles.swift; sourceTree = "<group>"; };
 		7A8595E52548DBEF007574D0 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		7A9413842593C5120010C3FF /* ButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTest.swift; sourceTree = "<group>"; };
 		7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSmall.swift; sourceTree = "<group>"; };
@@ -102,6 +99,7 @@
 			files = (
 				7AACE30A253F4D520074D416 /* ConfettiView in Frameworks */,
 				7AD40B0525F8595300B36C50 /* iPages in Frameworks */,
+				7AE6C12F260541A600B026B4 /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +154,6 @@
 				7A73BFBC24B8E45A00481EDC /* Info.plist */,
 				7A73BFB624B8E45A00481EDC /* Preview Content */,
 				7ABB76AE24CA28ED00B01B1D /* Launch Screen.storyboard */,
-				7A24A27C24D6419800F621D3 /* Profile.swift */,
-				7A77FF2824EF52DD00747557 /* ViewStyles.swift */,
 			);
 			path = "Thirst Counter";
 			sourceTree = "<group>";
@@ -247,6 +243,7 @@
 			packageProductDependencies = (
 				7AACE309253F4D520074D416 /* ConfettiView */,
 				7AD40B0425F8595300B36C50 /* iPages */,
+				7AE6C12E260541A600B026B4 /* Neumorphic */,
 			);
 			productName = "Thirst Counter";
 			productReference = 7A73BFAB24B8E45900481EDC /* Thirst Counter.app */;
@@ -323,6 +320,7 @@
 			packageReferences = (
 				7AACE308253F4D520074D416 /* XCRemoteSwiftPackageReference "ConfettiView" */,
 				7AD40B0325F8595300B36C50 /* XCRemoteSwiftPackageReference "iPages" */,
+				7AE6C12D260541A600B026B4 /* XCRemoteSwiftPackageReference "neumorphic" */,
 			);
 			productRefGroup = 7A73BFAC24B8E45900481EDC /* Products */;
 			projectDirPath = "";
@@ -369,7 +367,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */,
-				7A77FF2924EF52DD00747557 /* ViewStyles.swift in Sources */,
 				7A622B7525F8754C00C755B1 /* ContentView.swift in Sources */,
 				7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */,
 				7AA5B73225A3CD1A00235F47 /* WidgetSmall.swift in Sources */,
@@ -384,7 +381,6 @@
 				7A64B23B25F1755D0020B3D6 /* CreditsAndThanks.swift in Sources */,
 				7A73BFB124B8E45900481EDC /* SceneDelegate.swift in Sources */,
 				7A622B7925F9172B00C755B1 /* LiquidChooseView.swift in Sources */,
-				7A24A27D24D6419800F621D3 /* Profile.swift in Sources */,
 				7A00913B24BFA9EB00BCB36A /* LiquidModel.swift in Sources */,
 				7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */,
 				7A73BFDF24B9A58E00481EDC /* dataFile.swift in Sources */,
@@ -742,6 +738,14 @@
 				minimumVersion = 0.0.13;
 			};
 		};
+		7AE6C12D260541A600B026B4 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -754,6 +758,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7AD40B0325F8595300B36C50 /* XCRemoteSwiftPackageReference "iPages" */;
 			productName = iPages;
+		};
+		7AE6C12E260541A600B026B4 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AE6C12D260541A600B026B4 /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

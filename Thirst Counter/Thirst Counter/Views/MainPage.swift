@@ -272,8 +272,8 @@ struct MainPage: View {
                     self.addToTotal(water: self.lastWaterAdded)
                 }) {
                     Text("Previous : \(self.lastWaterAdded) oz")
-                        .font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 50)
-                            .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+                        .font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
+                            .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
 //                    Text("Previous : \(userWater.lastWaterAdded) oz").font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
 //                        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                 }
@@ -296,7 +296,7 @@ struct MainPage: View {
                     
                 }) {
                     Text("Add").font(.largeTitle).background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 15)
-                        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+                        .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
                 }
                 
                 //All the buttons
