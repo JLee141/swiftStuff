@@ -10,6 +10,22 @@ import SwiftUI
 import Swift
 import UserNotifications
 
+//This checks events throughout the app including entering foreground
+class Observer: ObservableObject {
+    @Published var enteredForeground = true
+    init() {
+        if #available(iOS 14.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        }
+    }
+    //Function to toggle Forground state
+    @objc func willEnterForeground() {
+        enteredForeground.toggle()
+    }
+}
+
 struct MainPage: View {
 
     //The class I use to keep water organized, I reference it with userWater.
@@ -321,6 +337,7 @@ struct MainPage: View {
                     }
                     Spacer()
                     Button(action: {
+                        //scaleEffect(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                     }) {
                         Image(systemName: "plus")
                             .font(.system(size: 30, weight: .semibold, design: .rounded))
@@ -330,7 +347,8 @@ struct MainPage: View {
                              .onTapGesture {
                                 impactLight.impactOccurred()
                                 addOne()
-                            }
+                                
+                             }
                             .onLongPressGesture(minimumDuration: 0) {
                                 addTen()
                                 impactHeavy.impactOccurred()
@@ -358,7 +376,7 @@ struct MainPage: View {
         .onReceive(self.observer.$enteredForeground) { _ in
                     dateCheck()
         }
-        .gesture(DragGesture(minimumDistance: 30, coordinateSpace: .local))
+        
     }
 }
 struct MainPage_Previews: PreviewProvider {
