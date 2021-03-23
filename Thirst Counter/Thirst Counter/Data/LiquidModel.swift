@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 import Swift
 
+
 class LiquidModel: ObservableObject {
     //This is requirement for inheriting Identifiable class
     //var id:String = UUID().uuidString
@@ -27,7 +28,6 @@ class LiquidModel: ObservableObject {
     @State var secondLaunch: Bool
     
     
-
 
     //Initilizer, organizes all the data into the right spots.
     init(Water: Int,UnitMeasurement: String, WaterGoal: Int,SecondLaunch: Bool) {

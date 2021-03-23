@@ -26,6 +26,20 @@ class Observer: ObservableObject {
     }
 }
 
+struct CustomButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(Color.blue)
+            .padding()
+            .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
+            .cornerRadius(15.0)
+            .font(.system(size: 40, weight: .semibold, design: .rounded))
+            .frame(width: 60, height: 60)
+            .cornerRadius(20)
+            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+    }
+}
+
 struct MainPage: View {
 
     //The class I use to keep water organized, I reference it with userWater.
@@ -51,6 +65,7 @@ struct MainPage: View {
     
     //Controls drag views
     @State var drag = DragGesture()
+
     
     //Both of these are used for animations
     @State var viewState = CGSize.zero
@@ -288,7 +303,7 @@ struct MainPage: View {
                     self.addToTotal(water: self.lastWaterAdded)
                 }) {
                     Text("Previous : \(self.lastWaterAdded) oz")
-                        .font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
+                        .font(.title2).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
                             .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
 //                    Text("Previous : \(userWater.lastWaterAdded) oz").font(.system(size: 20)).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
 //                        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
@@ -320,40 +335,39 @@ struct MainPage: View {
                     Button(action: {
                     }) {
                         Image(systemName: "minus")
-                        .font(.system(size: 30, weight: .semibold, design: .rounded))
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(20)
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         //Tap for minusOne
                         .onTapGesture {
                                 impactLight.impactOccurred()
                                 minusOne()
                         }
+                            
                         //Longpress for Minus 10
                         .onLongPressGesture(minimumDuration: 0){
                                 minusTen()
                                 impactHeavy.impactOccurred()
                             }
-                    }
+                    }.buttonStyle(CustomButtonStyle())
+                    
                     Spacer()
                     Button(action: {
-                        //scaleEffect(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                        
                     }) {
                         Image(systemName: "plus")
-                            .font(.system(size: 30, weight: .semibold, design: .rounded))
-                            .frame(width: 60, height: 60)
-                            .cornerRadius(20)
-                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                             .onTapGesture {
+                            .font(.system(size: 40, weight: .semibold, design: .rounded))
+                        .frame(width: 60, height: 60)
+                        .cornerRadius(20)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .onTapGesture {
                                 impactLight.impactOccurred()
                                 addOne()
                                 
                              }
-                            .onLongPressGesture(minimumDuration: 0) {
+                        .onLongPressGesture(minimumDuration: 0) {
                                 addTen()
                                 impactHeavy.impactOccurred()
                                 }
-                    }
+                        
+                    }.buttonStyle(CustomButtonStyle())
                 }
             }
         }
