@@ -12,6 +12,8 @@ import iPages
 struct ContentView: View {
     @State var currentPage: Int = 0
     @EnvironmentObject var userWater: LiquidModel
+//    @State var waterGoalBinding: Int
+//    @State var dailyWaterBinding: Int
     
     var body: some View {
         iPages {

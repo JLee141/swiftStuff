@@ -12,19 +12,22 @@ import UserNotifications
 
 //This checks events throughout the app including entering foreground
 class Observer: ObservableObject {
+    
     @Published var enteredForeground = true
-    init() {
-        if #available(iOS 14.0, *) {
-            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
-        } else {
-            NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        }
-    }
+    
     //Function to toggle Forground state
     @objc func willEnterForeground() {
         enteredForeground.toggle()
     }
+    init() {
+        if #available(iOS 14.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(self.willEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(self.willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        }
+    }
 }
+
 
 struct CustomButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
@@ -57,24 +60,23 @@ struct MainPage: View {
     private let goalCompleteCap = 1
     @State private var scaleFactor: CGFloat = 1
     
+    @State private var toggleShakeAnimation = false
+    
     //List of available measurements
     @State var unitMeasurements = ["oz","cups"]
     @State var unitMeasurement:String = "oz"
     @State var pickerExpand = false
     
-    
     //Controls drag views
     @State var drag = DragGesture()
-
     
     //Both of these are used for animations
     @State var viewState = CGSize.zero
     @Namespace private var animation
 
-    
     //All the haptic feedback calls I use in the app.
-    private let impactMed = UIImpactFeedbackGenerator(style: .medium)
     private let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+    private let impactMed = UIImpactFeedbackGenerator(style: .medium)
     private let impactLight = UIImpactFeedbackGenerator(style: .light)
     
     //This key is true to find out the app has ran before. EXAMPLE: True is default for application, set false to reset run then next time change back.
@@ -99,6 +101,7 @@ struct MainPage: View {
 //    }
     
     
+    
     //Alert for easter egg 😎
     @State private var easterEggZeroCount = 0
     @State private var easterEggAlert = false
@@ -111,6 +114,7 @@ struct MainPage: View {
     func isKeySetInUserDefaults(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
     }
+    
     
     //These functions control the variable water total which is what is shown
     func addOne() {
@@ -138,9 +142,9 @@ struct MainPage: View {
     func celebrationCheckView() {
         //Checks for goal and activates goal complete \*/
         //First Checks if dailywater is zero, if it is we don't need to run.
-        if self.userWater.dailyWater != 0 {
+        if self.userWater.dailyLiquid != 0 {
             //Checks goal this is main condition
-            if self.userWater.dailyWater >= userWater.waterGoal {
+            if self.userWater.dailyLiquid >= userWater.waterGoal {
                 //Checks cap, I don't want to continue after it ran once
                 if goalCompleteCap > goalCompleteCount {
                     self.goalComplete.toggle()
@@ -180,6 +184,9 @@ struct MainPage: View {
                         
                 //goalCompleteCount = goalCompleteCap
             }
+            
+            //This is hidden in the ZStack because of the UIKit implimentation but this will allow the device to register shakes.
+            ShakableViewRepresentable().allowsHitTesting(false)
             if showFirstLaunch == true {
                 withAnimation(Animation.easeIn) {
                     ZStack {
@@ -221,7 +228,6 @@ struct MainPage: View {
                             }.sheet(isPresented: $showDonationView, content: {
                                 DonationView()
                             })
-                            
                                 }
                     
                     Spacer()
@@ -240,42 +246,8 @@ struct MainPage: View {
                         .font(.largeTitle)
                         .fontWeight(.regular)
                 }
-                //Button due to picker but testing out ways to change oz
-                /*
-                Button(action: {
-                    self.pickerExpand.toggle()
-                }, label: {
-                    userWater.dailyWaterDisplay()
-                        .font(.largeTitle)
-                        .fontWeight(.medium)
-                })
-                if pickerExpand {
-                    Picker("", selection: $unitMeasurement) {
-                        ForEach(0..<unitMeasurements.count) {
-                            Text("\(self.unitMeasurements[$0])")
-                        }
-                    }.labelsHidden()
-                    .overlay(
-                        GeometryReader { gp in
-                            VStack {
-                                Button(action: {
-                                    self.pickerExpand.toggle()
-                                }) {
-                                    Text("Done")
-                                        .font(.system(size: 42))
-                                        .foregroundColor(.red)
-                                        .padding(.vertical)
-                                        .frame(width: gp.size.width)
-                                }.background(Color.white)
-                                Spacer()
-                            }
-                            .frame(width: gp.size.width, height: gp.size.height - 12)
-                            .border(Color.black, width: 8)
-                        }
-                    )
-                }
-                */
-                userWater.dailyWaterDisplay()
+
+                userWater.dailyLiquidDisplay()
                     .font(.largeTitle)
                     .fontWeight(.medium)
                 
@@ -295,7 +267,8 @@ struct MainPage: View {
                 Text("\(waterTotalDisplay) oz")
                     .bold()
                     .font(.largeTitle)
-
+                
+                //toggleShakeAnimation
                 
                 Button(action: {
                     impactLight.impactOccurred()
@@ -388,8 +361,17 @@ struct MainPage: View {
             
         }
         .onReceive(self.observer.$enteredForeground) { _ in
+            
                     dateCheck()
         }
+        
+        .onReceive(messagePublisher) { _ in
+                impactHeavy.impactOccurred()
+                
+                self.waterTotalDisplay = 0
+        }
+        
+        
         
     }
 }

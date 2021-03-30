@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LiquidChooseView: View {
+    
     @EnvironmentObject var userWater: LiquidModel
     
     let textList = ["This", "is", "A", "test", "list"]

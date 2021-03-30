@@ -45,8 +45,8 @@ struct Wave: Shape {
 }
 
 struct WaveBackgroundView: View {
-    @State var increaseSize = 1
-    @State var decreaseSize = 1
+    
+    @State var sizeChange = 1
     
     @Namespace private var animation
     
@@ -59,39 +59,39 @@ struct WaveBackgroundView: View {
         VStack {
             ZStack {
                 HStack {
-                    
                     Button(action: {
-                        decreaseSize+=2
-                        if 2 > increaseSize {
-                            increaseSize-=2
+                        if 0 < sizeChange {
+                            if sizeChange < 7 {
+                                sizeChange-=2
+                            }
                         }
-                        
                     }){
                         Text("Increase!")
                     }
                     
                     Button(action: {
-                        increaseSize+=2
-                        if 2 > decreaseSize {
-                            decreaseSize-=2
+                        if 0 < sizeChange {
+                            if sizeChange < 7 {
+                                sizeChange+=2
+                            }
                         }
                     }){
                         Text("Decrease!")
                     }
                 }
-
                 waveBackground1
-                    .offset(x: 0, y: CGFloat(40*increaseSize))
+                    .offset(x: 0, y: CGFloat(40*sizeChange))
                     .opacity(0.2)
-                    //.animation(repeatingAnimation)
+                    
                     .matchedGeometryEffect(id: "wave", in: animation)
+                    .animation(.easeIn)
                 
                 waveBackground2
-                    .offset(x: 0, y: CGFloat(60*increaseSize))
+                    .offset(x: 0, y: CGFloat(60*sizeChange))
                     .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                    //.animation(repeatingAnimation)
+                    
                     .matchedGeometryEffect(id: "wave", in: animation)
-                
+                    .animation(.easeIn)
             }
         }
     }

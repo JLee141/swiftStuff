@@ -16,6 +16,9 @@ struct DonationView: View {
 let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
 let impactMedium = UIImpactFeedbackGenerator(style: .medium)
     
+//ApplePay Implementation
+let applePayHandeler = ApplePayHandler()
+    
 @State var input = NumbersOnly()
     
     var body: some View {
@@ -26,7 +29,7 @@ let impactMedium = UIImpactFeedbackGenerator(style: .medium)
             }) {
                 Image(systemName:"chevron.compact.down")
             }.padding()
-            
+            Spacer()
             Group {
                     VStack {
                         Image(
@@ -34,11 +37,11 @@ let impactMedium = UIImpactFeedbackGenerator(style: .medium)
                             .resizable()
                             .frame(width: 125, height: 125)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        Text("Thank you for using my app! I hope it brings value into your life. I invite you to support me if you can. I intend to keep this app free to help people reach their goals.")
+                        Text("Thank you for using my app! I hope it brings value into your life. I invite you to support me. I intend to keep this app free to help people reach their goals.")
                             .font(.title2)
                             .multilineTextAlignment(.center)
                             .padding()
-                    }
+                }
                 Group {
                     HStack {
                             Spacer()
@@ -62,57 +65,75 @@ let impactMedium = UIImpactFeedbackGenerator(style: .medium)
                 }
             }
             Spacer()
-            Group {
-                VStack {
-                    HStack {
-                    Button(action: {
-                        impactHeavy.impactOccurred()
-                        self.presentationMode.wrappedValue.dismiss()
-                    }){
-                    Text("Courteous Level : 1️⃣ Dollar")
-                        .font(.title3)
-                    }
-                }
-                    .padding()
-                    HStack {
-                    Button(action: {
-                        impactHeavy.impactOccurred()
-                        self.presentationMode.wrappedValue.dismiss()
-                    }){
-                        Text("Kind Level :  5️⃣ Dollars")
-                        .font(.title3)
-                    }
-                }
-                .padding()
-                HStack {
-                    Button(action: {
-                        impactHeavy.impactOccurred()
-                        self.presentationMode.wrappedValue.dismiss()
-                    }){
-                        Text("Generous Level : 🔟 Dollars")
-                        .font(.title3)
-                    }
-                    .padding()
-                    }
-                    
-                HStack {
-                    Button(action: {
-                        impactHeavy.impactOccurred()
-                        self.presentationMode.wrappedValue.dismiss()
-                    }){
-                        TextField("Enter Value You Want", text: $input.value)
-                            .keyboardType(.numberPad)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                            .font(.title3)
-                    }
-                    
-                }
-                }
-            }
-            
-            
-            Spacer()
+//            Group {
+//                VStack {
+//                    HStack {
+//                    Button(action: {
+//                        impactHeavy.impactOccurred()
+//                        //self.presentationMode.wrappedValue.dismiss()
+//                        self.applePayHandeler.startPayment { success in
+//                            if success {
+//                                self.presentationMode.wrappedValue.dismiss()
+//                            } else {
+//                                self.presentationMode.wrappedValue.dismiss()
+//                            }
+//
+//                        }
+//                    }){
+//                    Text("Donate $1  APPLE PAY")
+//                        .font(Font.custom("HelveticaNeue-Bold", size: 16))
+//                        .background(Color.secondary)
+//                        .padding(10)
+//                        .foregroundColor(.primary)
+//                        .cornerRadius(10)
+//                    Text("$1")
+//                        .font(.title2)
+//                    }
+//                }
+//                    .padding()
+//                    HStack {
+//                    Button(action: {
+//                        impactHeavy.impactOccurred()
+//                        self.presentationMode.wrappedValue.dismiss()
+//                    }){
+//                        Text("Kind Level :")
+//                            .foregroundColor(.primary)
+//                            .font(.title2)
+//                        Text("$3")
+//                            .font(.title2)
+//                    }
+//                }
+//                .padding()
+//                HStack {
+//                    Button(action: {
+//                        impactHeavy.impactOccurred()
+//                        self.presentationMode.wrappedValue.dismiss()
+//                    }){
+//                        Text("Generous Level :")
+//                            .foregroundColor(.primary)
+//                            .font(.title2)
+//                        Text("$10")
+//                            .font(.title2)
+//                    }
+//                    .padding()
+//                    }
+//                HStack {
+//                    Button(action: {
+//                        impactHeavy.impactOccurred()
+//                        self.presentationMode.wrappedValue.dismiss()
+//                    }){
+//                        TextField("Custom Donation", text: $input.value)
+//                            .keyboardType(.numberPad)
+//                            .multilineTextAlignment(.center)
+//                            .padding()
+//                            .font(.title3)
+//                    }
+//
+//                }
+//                }
+//            Spacer()
+//            }
+
             HStack {
                 Button(action: {
                     impactMedium.impactOccurred()

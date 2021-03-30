@@ -10,19 +10,16 @@ import SwiftUI
 
 struct WelcomeScreen: View {
     @State private var input = NumbersOnly()
+    
     @State private var textFieldBinding: String = ""
+    
     @EnvironmentObject var userWater: LiquidModel
+    
     @State var waterGoalBinding:Int = 0
     @Environment(\.presentationMode) var presentationMode
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     var body: some View {
         VStack {
-            Button(action: {
-                impactHeavy.impactOccurred()
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName:"chevron.compact.down")
-            }
             Spacer()
         Text("Hello! Welcome to thirst counter!💧")
             .font(.title)
