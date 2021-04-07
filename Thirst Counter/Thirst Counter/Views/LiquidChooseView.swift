@@ -12,6 +12,8 @@ struct LiquidChooseView: View {
     
     @EnvironmentObject var userWater: LiquidModel
     
+    //var liquidCollectionNames:[String]
+    
     let textList = ["This", "is", "A", "test", "list"]
     
     @State var liquidList = ["Water","Coffee"]

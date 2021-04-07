@@ -13,16 +13,13 @@ struct SettingsView: View {
     @State var number = 1
     
     var body: some View {
-        NavigationView {
-            List {
+        List {
                 Text("Test")
-                Stepper(value: $number, in: 1...200) {
+                Stepper(value: $number, in: 1...200)
+                {
                     Text("Amount of OZ: \(number)")
                 }
-
-            }
         }
-        .navigationBarTitle("Settings")
     }
 }
 

@@ -78,10 +78,10 @@
             filePath = "Thirst Counter/Views/DonationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "46B8E401-3A38-4BF6-A3D1-9789CAD8CF67 - cfaee21f31245284"
@@ -126,10 +126,10 @@
             filePath = "Thirst Counter/Views/DonationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "F6F087C3-F118-414C-9041-D81DCC601F9D - b49be8d547770a20"

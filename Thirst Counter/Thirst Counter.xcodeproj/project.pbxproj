@@ -12,6 +12,7 @@
 		7A0FDEEE260A472500E20C01 /* ShakeGestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FDEED260A472500E20C01 /* ShakeGestureManager.swift */; };
 		7A10CC59252535620086B1FA /* WaterGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10CC58252535620086B1FA /* WaterGoalView.swift */; };
 		7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */; };
+		7A3D22942617EB04008D949E /* EasterEggCelebration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3D22932617EB04008D949E /* EasterEggCelebration.swift */; };
 		7A4E41DD25B0C5840067F39B /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E41DC25B0C5840067F39B /* DonationView.swift */; };
 		7A5F576A25BA1917006D1DC2 /* AboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F576925BA1917006D1DC2 /* AboutMeView.swift */; };
 		7A622B7325F8752900C755B1 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A622B7225F8752900C755B1 /* MainPage.swift */; };
@@ -63,6 +64,7 @@
 		7A0FDEED260A472500E20C01 /* ShakeGestureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeGestureManager.swift; sourceTree = "<group>"; };
 		7A10CC58252535620086B1FA /* WaterGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalView.swift; sourceTree = "<group>"; };
 		7A24A28024D7513100F621D3 /* WaveBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackgroundView.swift; sourceTree = "<group>"; };
+		7A3D22932617EB04008D949E /* EasterEggCelebration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasterEggCelebration.swift; sourceTree = "<group>"; };
 		7A4E41DC25B0C5840067F39B /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		7A5F576925BA1917006D1DC2 /* AboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeView.swift; sourceTree = "<group>"; };
 		7A622B7225F8752900C755B1 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				7A10CC58252535620086B1FA /* WaterGoalView.swift */,
 				7A8595E52548DBEF007574D0 /* WelcomeScreen.swift */,
 				7ABE8734255606D900AF2D90 /* ConfettiCelebrationView.swift */,
+				7A3D22932617EB04008D949E /* EasterEggCelebration.swift */,
 				7A76276E2562EF1100350C00 /* NotificationView.swift */,
 				7A9413842593C5120010C3FF /* ButtonTest.swift */,
 				7AA5B73125A3CD1A00235F47 /* WidgetSmall.swift */,
@@ -381,6 +384,7 @@
 				7ABB76B124CA322400B01B1D /* History.swift in Sources */,
 				7A042B4D260E8D6300E8CD74 /* ApplePayButton.swift in Sources */,
 				7A8595E62548DBEF007574D0 /* WelcomeScreen.swift in Sources */,
+				7A3D22942617EB04008D949E /* EasterEggCelebration.swift in Sources */,
 				7ABE8735255606D900AF2D90 /* ConfettiCelebrationView.swift in Sources */,
 				7A24A28124D7513100F621D3 /* WaveBackgroundView.swift in Sources */,
 				7A9413852593C5120010C3FF /* ButtonTest.swift in Sources */,

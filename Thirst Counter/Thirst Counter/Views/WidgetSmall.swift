@@ -7,30 +7,31 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct WidgetSmall: View {
     //10 seconds countdown
-    @State private var timeRemaining = 10
-    @State private var isActive = true
+//    @State private var timeRemaining = 10
+//    @State private var isActive = true
     
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    //let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    @EnvironmentObject var userWater: LiquidModel
+    //@EnvironmentObject var userWater: LiquidModel
+    
+    //@State var maxPerLine:Int = 2
+    
     var body: some View {
-        
         VStack {
-            Text("The time remaining is: \(timeRemaining)")
-            
-        }.onReceive(timer) { _ in
-            if self.timeRemaining > 0 {
-                timeRemaining-=1
-            }
+            Text("Hello")
         }
     }
 }
 
 struct WidgetSmall_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetSmall()
+        Group {
+            WidgetSmall()
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+        }
     }
 }

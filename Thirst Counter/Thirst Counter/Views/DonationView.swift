@@ -37,7 +37,11 @@ let applePayHandeler = ApplePayHandler()
                             .resizable()
                             .frame(width: 125, height: 125)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        Text("Thank you for using my app! I hope it brings value into your life. I invite you to support me. I intend to keep this app free to help people reach their goals.")
+                        Text("""
+Thank you for using my app!
+
+I hope it brings value into your life. I invite you to support me. I intend to keep this app free to help people reach their goals.
+""")
                             .font(.title2)
                             .multilineTextAlignment(.center)
                             .padding()
@@ -141,6 +145,7 @@ let applePayHandeler = ApplePayHandler()
                 }){
                     Text("Not Right Now").font(.title3).background(Color.blue).foregroundColor(Color.white).cornerRadius(10).padding(.horizontal, 20)
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
+                        
                 }
             }
             .padding()

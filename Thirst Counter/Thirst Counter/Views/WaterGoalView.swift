@@ -11,23 +11,30 @@ import SwiftUI
 //This is to format numbers so that field only takes an actual numbers, usable throughout the project.
 class NumbersOnly: ObservableObject {
     
-    @State private var showingAlert = false
+    @State var showingOver9000Alert = false
+    
     @Published var value = "" {
         didSet {
-            let filtered = value.filter { $0.isNumber }
-            
+            let filtered = value.filter {
+                $0.isNumber
+            }
             if value != filtered {
                 value = filtered
             }
         }
-//        //Logic I will add later for an alert over a certain amount of water that a user inputs.
+        //Logic I will add later for an alert over a certain amount of water that a user inputs.
 //        willSet {
-//            if (Int(newValue))! > 20000 {
-//                self.showingAlert = true
+//            if (Int(newValue))! > 9999 {
+//                let zero = "0"
+//                let filtered = value.filter { $0.isNumber }
+//                if value != filtered {
+//                    value = zero
+//                }
 //            }
 //        }
     }
 }
+
 struct WaterGoalView: View {
     //PresentationMode gets me out of this view when I change it //Used it in the confirm button.
     @Environment(\.presentationMode) var presentationMode
@@ -36,6 +43,10 @@ struct WaterGoalView: View {
     @EnvironmentObject var userWater: LiquidModel
     @State var waterGoalBinding:Int = 0
     @State var input = NumbersOnly()
+    @State var liquidName:String = ""
+    
+    //Pops alert if value goes over 9999
+    @State private var showingAlert = false
     
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     
@@ -62,7 +73,9 @@ struct WaterGoalView: View {
                     .padding()
                     
                 TextField("currently \(waterGoalBinding)", text: $input.value.animation(.easeIn), onCommit: {
-                    self.waterGoalBinding = Int(input.value)!
+                    if Int(input.value) ?? 0 < 9000 {
+                        self.waterGoalBinding = Int(input.value)!
+                    }
                 })
                 .font(.title2)
                 .keyboardType(.numberPad)
@@ -73,24 +86,29 @@ struct WaterGoalView: View {
             //Confirms binding for watergoal and dismisses this sheet
             Button(action: {
                 if Int(input.value) == nil {
-                impactHeavy.impactOccurred()
+                    impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
-                
+                    }
+                else if Int(input.value) ?? 0 > 8999 {
+                    input.value = "0"
+                    self.showingAlert.toggle()
                 } else {
                 self.waterGoalBinding = Int(input.value)!
                 userWater.recordWaterGoal(waterGoal: self.waterGoalBinding)
-                    impactHeavy.impactOccurred()
+                impactHeavy.impactOccurred()
                 self.presentationMode.wrappedValue.dismiss()
                 }
-                
+                                
             }) {
-                   Text("Confirm")
+                Text("Confirm")
                     .background(Color.blue).foregroundColor(Color.white).cornerRadius(15).padding(.horizontal, 20)
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 5)
                     .font(.title)
-                
             }
         }.padding()
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("It's over 9,000! 😭"), message: Text("You set the goal too high! Please set under 9,000"), dismissButton: .default(Text("You got it")))
+       }
         
     }
 }

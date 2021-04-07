@@ -19,7 +19,7 @@ struct ContentView: View {
         iPages {
             MainPage()
             LiquidChooseView()
-        }
+        }.navigationOrientation(.vertical)
     }
     
 }

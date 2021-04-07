@@ -22,17 +22,29 @@ struct WelcomeScreen: View {
         VStack {
             Spacer()
         Text("Hello! Welcome to thirst counter!💧")
-            .font(.title)
+            .font(.title2)
             .padding()
-        Text("Let's start with a goal (In oz's)")
-            .font(.body)
-            .bold()
-            HStack {
-                Spacer()
-                TextField("Goal goes here", text: $input.value)
-                    .keyboardType(.numberPad)
-                    .multilineTextAlignment(.center)
-            }
+            .multilineTextAlignment(.center)
+//        Text("Let's start with a name (What are you drinking?)")
+//            .font(.body)
+//            .bold()
+//            HStack {
+//                Spacer()
+//                TextField("Drink Name", text: $input.value)
+//                    .keyboardType(.numberPad)
+//                    .multilineTextAlignment(.center)
+//            }
+            Text("Let's start with a goal (In oz's)")
+                .font(.body)
+                .bold()
+                .multilineTextAlignment(.center)
+                HStack {
+                    Spacer()
+                    TextField("Goal goes here", text: $input.value)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                }.onAppear(perform: {
+                })
             Spacer()
             Button(action: {
                 if Int(input.value) == nil {

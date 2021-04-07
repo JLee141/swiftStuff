@@ -86,6 +86,7 @@ struct WaveBackgroundView: View {
                     .matchedGeometryEffect(id: "wave", in: animation)
                     .animation(.easeIn)
                 
+                
                 waveBackground2
                     .offset(x: 0, y: CGFloat(60*sizeChange))
                     .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
