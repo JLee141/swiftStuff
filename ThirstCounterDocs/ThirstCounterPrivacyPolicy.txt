@@ -9,10 +9,10 @@ Privacy Policy
 
 Last updated April, 12, 2021
 
-Thirst Counter (“we” or “us” or “our”) respects the privacy of all our users (“user” or “you”) because we believe it’s a fundamental human right. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit the Thirst Counter app store page. Please read this Privacy Policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.
+Thirst Counter (“I” or “Jordan Lee”) respects the privacy of all our users (“user” or “you”) because I believe it’s a fundamental human right. This Privacy Policy explains how I collect, use, disclose, and safeguard your information when you visit the Thirst Counter app store page. Please read this Privacy Policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.
 
-We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will update all our users if it changes.
+I reserve the right to make changes to this Privacy Policy at any time and for any reason. I will update all our users if it changes.
 
-This app does not share or store any information on liquids a user drinks or any goals on any server that is made by Thirst Counter, all info is built from the ground up to store that on-device at the time of this writing. If this changes users will be notified if this change and will have the option to opt-out. In the future if this feature were to exist it will exist solely for improving user experience across devices and not for analytics or advertisements.
+This app does not share or store any information on liquids a user drinks or any goals on any server that is made by Thirst Counter, all features are built from the ground up to store on-device at the time of this writing (April, 12, 2021). If this changes users will be notified if this change and will have the option to opt-out. In the future if this feature were to exist it will exist solely for improving user experience across devices and NOT for analytics or advertisements.
 
 Thirst Counter was built to help people meet their goals with full intent on what goals they want to achieve with a fun and fast design all with privacy in mind.
