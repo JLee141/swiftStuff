@@ -25,6 +25,7 @@ func sayHello(_ name:String,_ age:Int) -> String{
 var stringHello = "This is a string perameter of hello!"
 var name = "Jordan"
 var myAge = 27
+//Don't have to put perameter labels
 sayHello(name, myAge)
 
 func addFourTo(x:Int)->Int{
